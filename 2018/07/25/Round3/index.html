@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="Jeb&#39;s blog">
 <meta property="og:description" content="#OneCode天梯赛 Round3第一题困难的编码 原题链接：http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10132  时间限制: 1000 MS 内存限制: 131072 KB   问题描述 OneCode收到了一份奇怪的编码，据说这是先知的一份笔记，这个笔记让人难以理解，不过聪明的CXK很快就发现了这个编码的规律。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-25T10:34:44.376Z">
+<meta property="og:updated_time" content="2018-07-25T10:38:17.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jeb&#39;s blog">
 <meta name="twitter:description" content="#OneCode天梯赛 Round3第一题困难的编码 原题链接：http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10132  时间限制: 1000 MS 内存限制: 131072 KB   问题描述 OneCode收到了一份奇怪的编码，据说这是先知的一份笔记，这个笔记让人难以理解，不过聪明的CXK很快就发现了这个编码的规律。">
@@ -307,7 +307,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T10:34:44+00:00">2018-07-25</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T10:38:17+00:00">2018-07-25</time>
             
 
             
@@ -369,19 +369,7 @@ hangA
 <p>用string+substr方法，时间复杂度不高，直接AC</p>
 <p>代码如下</p>
 <hr>
-<p>```cpp</p>
-<p>#include<iostream></iostream></p>
-<p>#include<cstdio></cstdio></p>
-<p>#include<cmath></cmath></p>
-<p>#include<algorithm></algorithm></p>
-<p>#include<cstring></cstring></p>
-<p>#include<string></string></p>
-<p>#include<sstream></sstream></p>
-<p>#include<stack></stack></p>
-<p>#define Max 5000</p>
-<p>using namespace std;</p>
-<p>string s;</p>
-<p>int main()<br>{<br>    int n,m;<br>    cin&gt;&gt;n&gt;&gt;m;<br>    cin&gt;&gt;s;<br>    for (int i=1;i&lt;=n;i++)<br>    {<br>        cout&lt;&lt;s.substr(0,m)&lt;&lt;endl;<br>        s=s.substr(m,s.size());<br>    }<br>    return 0;<br>}<br>```cpp</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 5000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s.substr(<span class="number">0</span>,m)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		s=s.substr(m,s.size());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>第二题</strong><br><em>贪吃的ZZ恺成</em></p>
 <p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10133" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10133</a></p>
@@ -421,52 +409,11 @@ ans(2)=2;
 <pre><code>O(t*lgn)
 </code></pre><p>附在天梯赛1TLE9AC在题库AC的代码Σ(ﾟдﾟlll)</p>
 <hr>
-<p>```cpp</p>
-<p>#include<iostream></iostream></p>
-<p>#include<cstdio></cstdio></p>
-<p>#include<cmath></cmath></p>
-<p>#include<algorithm></algorithm></p>
-<p>#include<cstring></cstring></p>
-<p>#include<string></string></p>
-<p>#include<sstream></sstream></p>
-<p>#include<stack></stack></p>
-<p>#define Max 5000</p>
-<p>using namespace std;</p>
-<p>long long calc(long long n)<br>{<br>    if (n==1)<br>        return 1;<br>    if (n==2)<br>        return 2;<br>    if (n&amp;1)<br>    {<br>        return calc((1+n)/2-1)+1;<br>    }<br>    return (calc((2+n)/2-1))+1;</p>
-<p>}</p>
-<p>int main()<br>{<br>    long long n;<br>    cin&gt;&gt;n;<br>    while (n–)<br>    {<br>        long long k;<br>        cin&gt;&gt;k;<br>        cout&lt;&lt;calc(k)&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br>```cpp    </p>
-<hr>
-<p><strong>第三题</strong><br><em>小强的球</em></p>
-<p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10134" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10134</a></p>
-<hr>
-<p>时间限制: 1000 MS 内存限制: 131072 KB </p>
-<p><strong>问题描述</strong></p>
-<p>小强很喜欢玩球，他想要在桌子上摆一些球，排成一排。<br>球只有三种颜色，红色，黄色，或者蓝色。现在，小强有R个红球，Y个黄球，B个蓝球，需要依次摆在桌子上。<br>小强每放一个新的球，可以选择放在球的中间或者放在端头。<br>每放一个球，小球就可以得到一个分数。计分规则如下：<br>1.对于刚开始放的第一个球，计0分。<br>2.如果球放在端头，则分数等于之前放过的球的颜色数，例如之前放球的状态是RYYR，现在把球放在末尾，则计2分。<br>3.如果球放在某两个球之间，则分数为前半段的球的颜色加上后半段的球的颜色数，例如之前放球的状态是RYYR，现在把球放在两个Y中间，则计4分，因为前半段有两种颜色，后半段也有两种颜色。</p>
-<p>那么，小强放球能获取的最大值是多少呢？</p>
-<p>输入格式</p>
-<p>第一行是一个整数t(1&lt;=t&lt;=10^5),代表有t组测试数据。</p>
-<p>接下来t行，每行有三个整数R,Y,B(0&lt;=R,Y,B&lt;=10^9)，分别代表每种颜色球的个数，含义跟题目描述中的一致。</p>
-<p>输出格式</p>
-<p>对于每组测试数据，输出结果，并且占一行。</p>
-<p>样例输入</p>
-<pre><code>3
-2 2 2
-3 3 3
-4 4 4
-</code></pre><p>样例输出</p>
-<pre><code>15
-33
-51
-</code></pre><hr>
-<p>不会，提交了样例，略过。</p>
-<p>```cpp</p>
-<p>```cpp</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 5000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">calc</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n==<span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (n==<span class="number">2</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">if</span> (n&amp;<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> calc((<span class="number">1</span>+n)/<span class="number">2</span><span class="number">-1</span>)+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (calc((<span class="number">2</span>+n)/<span class="number">2</span><span class="number">-1</span>))+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">while</span> (n--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> k;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;calc(k)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">**第三题**</span><br><span class="line">*小强的球*</span><br><span class="line"></span><br><span class="line">原题链接：http:<span class="comment">//oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10134</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">时间限制: <span class="number">1000</span> MS 内存限制: <span class="number">131072</span> KB </span><br><span class="line"></span><br><span class="line">**问题描述**</span><br><span class="line"></span><br><span class="line">小强很喜欢玩球，他想要在桌子上摆一些球，排成一排。</span><br><span class="line">球只有三种颜色，红色，黄色，或者蓝色。现在，小强有R个红球，Y个黄球，B个蓝球，需要依次摆在桌子上。</span><br><span class="line">小强每放一个新的球，可以选择放在球的中间或者放在端头。</span><br><span class="line">每放一个球，小球就可以得到一个分数。计分规则如下：</span><br><span class="line"><span class="number">1.</span>对于刚开始放的第一个球，计<span class="number">0</span>分。</span><br><span class="line"><span class="number">2.</span>如果球放在端头，则分数等于之前放过的球的颜色数，例如之前放球的状态是RYYR，现在把球放在末尾，则计<span class="number">2</span>分。</span><br><span class="line"><span class="number">3.</span>如果球放在某两个球之间，则分数为前半段的球的颜色加上后半段的球的颜色数，例如之前放球的状态是RYYR，现在把球放在两个Y中间，则计<span class="number">4</span>分，因为前半段有两种颜色，后半段也有两种颜色。</span><br><span class="line"></span><br><span class="line">那么，小强放球能获取的最大值是多少呢？</span><br><span class="line"></span><br><span class="line">输入格式</span><br><span class="line"></span><br><span class="line">第一行是一个整数t(<span class="number">1</span>&lt;=t&lt;=<span class="number">10</span>^<span class="number">5</span>),代表有t组测试数据。</span><br><span class="line"></span><br><span class="line">接下来t行，每行有三个整数R,Y,B(<span class="number">0</span>&lt;=R,Y,B&lt;=<span class="number">10</span>^<span class="number">9</span>)，分别代表每种颜色球的个数，含义跟题目描述中的一致。</span><br><span class="line"></span><br><span class="line">输出格式</span><br><span class="line"></span><br><span class="line">对于每组测试数据，输出结果，并且占一行。</span><br><span class="line"></span><br><span class="line">样例输入</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span></span><br><span class="line">    <span class="number">2</span> <span class="number">2</span> <span class="number">2</span></span><br><span class="line">    <span class="number">3</span> <span class="number">3</span> <span class="number">3</span></span><br><span class="line">    <span class="number">4</span> <span class="number">4</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line">样例输出</span><br><span class="line"></span><br><span class="line">    <span class="number">15</span></span><br><span class="line">    <span class="number">33</span></span><br><span class="line">    <span class="number">51</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">不会，提交了样例，略过。</span><br><span class="line"></span><br><span class="line">```cpp</span><br></pre></td></tr></table></figure>
 <hr>
 <p>听了同学讲解，此题需要数学归纳，再写分段函数（或者说贪心+特例），用O(1)的复杂度快速刷爆</p>
 <hr>
-<p>```cpp</p>
-<p>#include<iostream></iostream></p>
-<p>#include<algorithm><br>using namespace std;<br>unsigned long long calc(unsigned long long a,unsigned long long b,unsigned long long c)<br>{<br>    if (a==1&amp;&amp;b==1&amp;&amp;c==1)//边界<br>        return 3;<br>    if ((a==1||a==0)&amp;&amp;b==0&amp;&amp;c==0)//边界<br>        return 0;<br>    if (a==1&amp;&amp;b==1&amp;&amp;c==0)//边界<br>        return 1;<br>    if (a&gt;=2&amp;&amp;b==0&amp;&amp;c==0)//左/右1,另一边1，共2分<br>        return 1+2<em>(a-2);<br>    if (a&gt;=2&amp;&amp;b==1&amp;&amp;c==0)//左/右2,另一边1，共3分<br>        return 3+3</em>(a-2);<br>    if (a&gt;=2&amp;&amp;b==1&amp;&amp;c==1)//左/右3,另一边1，共4分<br>        return 10+4<em>(a-2);<br>    if (a&gt;=2&amp;&amp;b&gt;=2&amp;&amp;c==0)//左右二色，共4分<br>        return 6+4</em>(a+b-4);<br>    if (a&gt;=2&amp;&amp;b&gt;=2&amp;&amp;c==1) //左/右3,另一边2，共5分<br>        return 10+5<em>(a+b-4);<br>    return 15+6</em>(a+b+c-6);//左右三色，共6分<br>}<br>int main()<br>{<br>    int n;<br>    cin&gt;&gt;n;<br>    unsigned long long a[5];<br>    for (int i=1;i&lt;=n;i++)<br>    {<br>        cin&gt;&gt;a[1]&gt;&gt;a[2]&gt;&gt;a[3];<br>        sort(a+1,a+4);<br>        cout&lt;&lt;calc(a[3],a[2],a[1])&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br>```cpp</algorithm></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="title">calc</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> b,<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a==<span class="number">1</span>&amp;&amp;b==<span class="number">1</span>&amp;&amp;c==<span class="number">1</span>)<span class="comment">//边界 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">if</span> ((a==<span class="number">1</span>||a==<span class="number">0</span>)&amp;&amp;b==<span class="number">0</span>&amp;&amp;c==<span class="number">0</span>)<span class="comment">//边界 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (a==<span class="number">1</span>&amp;&amp;b==<span class="number">1</span>&amp;&amp;c==<span class="number">0</span>)<span class="comment">//边界 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (a&gt;=<span class="number">2</span>&amp;&amp;b==<span class="number">0</span>&amp;&amp;c==<span class="number">0</span>)<span class="comment">//左/右1,另一边1，共2分 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>+<span class="number">2</span>*(a<span class="number">-2</span>);</span><br><span class="line">	<span class="keyword">if</span> (a&gt;=<span class="number">2</span>&amp;&amp;b==<span class="number">1</span>&amp;&amp;c==<span class="number">0</span>)<span class="comment">//左/右2,另一边1，共3分 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">3</span>+<span class="number">3</span>*(a<span class="number">-2</span>);	</span><br><span class="line">	<span class="keyword">if</span> (a&gt;=<span class="number">2</span>&amp;&amp;b==<span class="number">1</span>&amp;&amp;c==<span class="number">1</span>)<span class="comment">//左/右3,另一边1，共4分 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">10</span>+<span class="number">4</span>*(a<span class="number">-2</span>);</span><br><span class="line">	<span class="keyword">if</span> (a&gt;=<span class="number">2</span>&amp;&amp;b&gt;=<span class="number">2</span>&amp;&amp;c==<span class="number">0</span>)<span class="comment">//左右二色，共4分 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">6</span>+<span class="number">4</span>*(a+b<span class="number">-4</span>);</span><br><span class="line">	<span class="keyword">if</span> (a&gt;=<span class="number">2</span>&amp;&amp;b&gt;=<span class="number">2</span>&amp;&amp;c==<span class="number">1</span>) <span class="comment">//左/右3,另一边2，共5分 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">10</span>+<span class="number">5</span>*(a+b<span class="number">-4</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">15</span>+<span class="number">6</span>*(a+b+c<span class="number">-6</span>);<span class="comment">//左右三色，共6分 </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">5</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[<span class="number">1</span>]&gt;&gt;a[<span class="number">2</span>]&gt;&gt;a[<span class="number">3</span>];</span><br><span class="line">		sort(a+<span class="number">1</span>,a+<span class="number">4</span>);</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;calc(a[<span class="number">3</span>],a[<span class="number">2</span>],a[<span class="number">1</span>])&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>第四题</strong><br><em>涯涯的字符串</em></p>
 <p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10135" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10135</a></p>
@@ -495,19 +442,79 @@ bcd
 <p>貌似是DP？我怎么会？！<br>DFS来一下。<br>数据变得这么严了？？？</p>
 <p>4TLE6AC</p>
 <hr>
-<p>```cpp</p>
-<p>#include<iostream></iostream></p>
-<p>#include<cstdio></cstdio></p>
-<p>#include<cmath></cmath></p>
-<p>#include<algorithm></algorithm></p>
-<p>#include<cstring></cstring></p>
-<p>#include<string></string></p>
-<p>#include<sstream></sstream></p>
-<p>#include<stack></stack></p>
-<p>using namespace std;</p>
-<p>string s;<br>long long alpha[30][30];<br>long long n;<br>bool pd[30];<br>long long f[30];<br>long long maxn,Maxn[30];<br>long long g;</p>
-<p>void dfs()<br>{<br>    bool bj=0;<br>    int fl[30];<br>    for (int ii=1;ii&lt;=26;ii++)<br>    {<br>        fl[ii]=f[ii];<br>        if ((f[ii]&amp;1)&amp;&amp;f[ii])<br>            bj=1;<br>    }<br>    if (!bj&amp;&amp;g&gt;maxn)<br>    {<br>        for (int ii=1;ii&lt;=26;ii++)<br>        {<br>            if (pd[ii])<br>                Maxn[ii]=1;<br>            else<br>                Maxn[ii]=0;<br>        }<br>        maxn=g;<br>    }<br>    for (int k=1;k&lt;=n;k++)<br>    {<br>        if (pd[k])<br>            continue;<br>        pd[k]=1;<br>        for (int ii=1;ii&lt;=26;ii++)<br>            f[ii]+=alpha[k][ii];<br>        g++;<br>        dfs();<br>        g–;<br>        for (int ii=1;ii&lt;=26;ii++)<br>            f[ii]=fl[ii];<br>        pd[k]=0;<br>    }<br>}</p>
-<p>int main()<br>{<br>    cin&gt;&gt;n;<br>    for (int i=1;i&lt;=n;i++)<br>    {<br>        cin&gt;&gt;s;<br>        for (int j=0;j!=s.size();j++)<br>            alpha[i][s[j]-‘a’+1]++;<br>    }<br>    dfs();<br>    cout&lt;&lt;maxn&lt;&lt;endl;<br>    for (int i=1;i&lt;=26;i++)<br>        if (Maxn[i])<br>            cout&lt;&lt;i&lt;&lt;’ ‘;<br>    return 0;<br>}<br>```cpp </p>
+<pre><code class="cpp"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="built_in">string</span> s;
+<span class="keyword">long</span> <span class="keyword">long</span> alpha[<span class="number">30</span>][<span class="number">30</span>];
+<span class="keyword">long</span> <span class="keyword">long</span> n;
+<span class="keyword">bool</span> pd[<span class="number">30</span>];
+<span class="keyword">long</span> <span class="keyword">long</span> f[<span class="number">30</span>];
+<span class="keyword">long</span> <span class="keyword">long</span> maxn,Maxn[<span class="number">30</span>];
+<span class="keyword">long</span> <span class="keyword">long</span> g;
+
+<span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">()</span></span>
+<span class="function"></span>{
+    <span class="keyword">bool</span> bj=<span class="number">0</span>;
+    <span class="keyword">int</span> fl[<span class="number">30</span>];
+    <span class="keyword">for</span> (<span class="keyword">int</span> ii=<span class="number">1</span>;ii&lt;=<span class="number">26</span>;ii++)
+    {
+        fl[ii]=f[ii];
+        <span class="keyword">if</span> ((f[ii]&amp;<span class="number">1</span>)&amp;&amp;f[ii])
+            bj=<span class="number">1</span>;
+    }
+    <span class="keyword">if</span> (!bj&amp;&amp;g&gt;maxn)
+    {
+        <span class="keyword">for</span> (<span class="keyword">int</span> ii=<span class="number">1</span>;ii&lt;=<span class="number">26</span>;ii++)
+        {
+            <span class="keyword">if</span> (pd[ii])
+                Maxn[ii]=<span class="number">1</span>;
+            <span class="keyword">else</span>
+                Maxn[ii]=<span class="number">0</span>;
+        }
+        maxn=g;
+    }        
+    <span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=n;k++)
+    {
+        <span class="keyword">if</span> (pd[k])
+            <span class="keyword">continue</span>;
+        pd[k]=<span class="number">1</span>;
+        <span class="keyword">for</span> (<span class="keyword">int</span> ii=<span class="number">1</span>;ii&lt;=<span class="number">26</span>;ii++)
+            f[ii]+=alpha[k][ii];
+        g++;
+        dfs();
+        g--;
+        <span class="keyword">for</span> (<span class="keyword">int</span> ii=<span class="number">1</span>;ii&lt;=<span class="number">26</span>;ii++)
+            f[ii]=fl[ii];
+        pd[k]=<span class="number">0</span>;
+    }
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+    <span class="built_in">cin</span>&gt;&gt;n;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)
+    {
+        <span class="built_in">cin</span>&gt;&gt;s;
+        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j!=s.size();j++)
+            alpha[i][s[j]-<span class="string">'a'</span>+<span class="number">1</span>]++;
+    }
+    dfs();
+    <span class="built_in">cout</span>&lt;&lt;maxn&lt;&lt;<span class="built_in">endl</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">26</span>;i++)
+        <span class="keyword">if</span> (Maxn[i])
+            <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">' '</span>;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
 <hr>
 <p>正解：DFS+状态压缩<br>我怎么会咧？？？(╯°Д°)╯</p>
 <hr>
