@@ -273,6 +273,242 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lqr513.coding.me/blog/blog/2018/07/25/Round2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeb">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeb's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/07/25/Round2/" itemprop="url">OneCode天梯赛 Round2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T10:53:10+00:00">2018-07-25</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="OneCode天梯赛-Round2"><a href="#OneCode天梯赛-Round2" class="headerlink" title="#OneCode天梯赛 Round2"></a>#OneCode天梯赛 Round2</h2><p><strong>第一题</strong><br><em>横冲直撞的车</em></p>
+<p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10127" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10127</a></p>
+<hr>
+<p>时间限制: 1000 MS 内存限制: 131072 KB</p>
+<p> <strong>问题描述</strong></p>
+<p>有一天无聊的迎哥哥不知道从哪弄来一副象棋，不过不知道下象棋的迎哥哥很是头疼，各种百度查规则ORZ…<br>这不，我们迎哥哥查阅到，中国象棋是中华民族传统文化的一部分，不仅在国内深受广大棋迷的喜爱，而且流传至国外，也逐步赢得很多棋迷的青睐。国外比较流行国际象棋（chess），很多外国棋友都想知晓中国象棋的游戏规则。两者走棋方法毕竟有很多差异，熟知一下基本规则，两种棋艺很多地方都是能够触类旁通的。很想精通中国象棋的他就开始一个一个的研究象棋中棋子的行棋规则。<br>迎哥哥第一个研究的就是象棋中的车，车在象棋中威力最大，无论横线、竖线均可行走，只要无子阻拦，步数不受限制。俗称“车行直路”。<br>那么问题就来了，现在迎哥哥的手上有一个n*m的棋盘，棋盘上已经有k个棋子存在。因为“车行直路”,所以迎哥哥想让他的车想横冲直撞。车能够横冲直撞的条件就是车所在的行或者列不存在别的棋子;已知的k个棋子的位置会干扰车的横冲直撞;所以现在想问你，已知的棋盘有多少个行和多少列列可以让我们迎哥哥的车横冲直撞？</p>
+<p>输入格式</p>
+<p>第一行输入n,m,k三个整数,棋盘的大小为n*m,k表示棋盘中已有棋子的个数;<br>接下来k行,每行两个整数x,y表示棋子的位置</p>
+<p>其中数据范围:(1&lt;=n,m&lt;=1000000),(0&lt;=k&lt;=1000000)(1&lt;=x&lt;=n,1&lt;=y&lt;=m)</p>
+<p>【友情提示】</p>
+<p>由于输入数据过大，scanf,printf很有必要哦！！！！</p>
+<p>输出格式</p>
+<p>输出一行2个整数，分别表示车可以横冲直撞的行数及列数</p>
+<p>样例输入</p>
+<pre><code>4 2 3
+4 1
+3 1
+4 2
+</code></pre><p>样例输出</p>
+<pre><code>2 0
+</code></pre><hr>
+<p>看到题第一反应是用DFS暴力，然后看了数据，放弃了。于是采用标记行和列是否被标记的办法。第一次提交，8WA2AC</p>
+<p>附错误的代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 5000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s.substr(<span class="number">0</span>,m)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		s=s.substr(m,s.size());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>提交之后很懵逼，查了很久发现n、m和k定义错类型了。。。</p>
+<hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 1000000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">bool</span> h[Max],l[Max];<span class="comment">//h是储存行的标记,l是储存列的标记</span></span><br><span class="line"><span class="keyword">int</span> ans1,ans2,n,m,k;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x,&amp;y);</span><br><span class="line">    	h[x]=<span class="number">1</span>;</span><br><span class="line">    	l[y]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    	<span class="keyword">if</span> (!h[i])</span><br><span class="line">    		ans1++;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    	<span class="keyword">if</span> (!l[i])</span><br><span class="line">    		ans2++;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans1&lt;&lt;<span class="string">' '</span>&lt;&lt;ans2;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>第二题</strong><br><em>精英人才</em></p>
+<p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10128" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10128</a></p>
+<hr>
+<p>时间限制: 1000 MS 内存限制: 131072 KB</p>
+<p><strong>问题描述</strong></p>
+<p>初到杭州的wlxsq,发现杭州搞竞赛的学生是真的多，竞赛的种类也很多。有奥数竞赛，物理竞赛，还有搞OI竞赛的，and so on…是真的很多<br>现在wlxsq拿到一份杭州竞赛的数据，总共有n个人参加竞赛,假设每人只能参加一种竞赛，每个人有相应的竞赛类型和他的精英价值，现在wlxsq想招一批精英人才，每一类竞赛最多招3人，问你在这个条件下，wlxsq可以招的精英人才的最大价值，当然，对于没有价值的选手(价值不大于0的选手)我们是肯定不会要的。<br>输入格式<br>输入一个整数n,表示参加竞赛的总人数，接下来n(1&lt;=n&lt;=10000)行每行输入一个字符串s(由大小写字母表示，长度不超过15)和一个整数v(-100&lt;=v&lt;=100),表示这个竞赛选手的竞赛类型和这次竞赛的精英价值。</p>
+<p>输出格式</p>
+<p>输出一行，wlxsq可获得的最大精英价值。</p>
+<p>样例输入</p>
+<pre><code>9
+OI 1
+OI 2
+OI 3
+OI 4
+OI 5
+OI 6
+math 10
+math 16
+english 100
+</code></pre><p>样例输出</p>
+<pre><code>141
+</code></pre><hr>
+<p>本来想用map暴力一下，发现貌似实现比较困难？于是用结构体保存学科与价值信息，再写个cmp函数sort一下，再模拟。提交5WA5AC？？？</p>
+<p>哇！GCC它歧视我！！！</p>
+<p>错误代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 11000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">int</span> n,k,len;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> k;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">&#125;a[Max];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node x,node y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x.s&lt;y.s?<span class="number">1</span>:x.s==y.s?x.k&gt;y.k:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;k;</span><br><span class="line">    	<span class="keyword">if</span> (k&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">continue</span>;</span><br><span class="line">    	a[++len].s=s,a[len].k=k;</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a+<span class="number">1</span>,a+len+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span> (l==<span class="number">3</span>&amp;&amp;a[i].s==a[i<span class="number">-1</span>].s)</span><br><span class="line">    		<span class="keyword">continue</span>;</span><br><span class="line">    	<span class="keyword">if</span> (l==<span class="number">3</span>&amp;&amp;a[i].s!=a[i<span class="number">-1</span>].s)</span><br><span class="line">    		l=<span class="number">0</span>;</span><br><span class="line">    	ans+=a[i].k;</span><br><span class="line">    	l++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">**第三题**</span><br><span class="line">*统计和*</span><br><span class="line"></span><br><span class="line">原题链接：http:<span class="comment">//oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10129</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">时间限制: <span class="number">1000</span> MS 内存限制: <span class="number">131072</span> KB </span><br><span class="line"></span><br><span class="line">**问题描述**</span><br><span class="line"></span><br><span class="line">有这样一道有意思的题目，从<span class="number">1</span>到n的自然数中，每次取出不同的两个数，要使他们的和大于m,问你有多少中不同的方案数，取<span class="number">1</span> <span class="number">5</span> 和 <span class="number">5</span> <span class="number">1</span>是同一种方案。</span><br><span class="line"></span><br><span class="line">输入格式</span><br><span class="line"></span><br><span class="line">输入两个整数n,m(<span class="number">1</span>&lt;=n&lt;=<span class="number">10</span>^<span class="number">7</span>,<span class="number">1</span>&lt;=m&lt;=<span class="number">2</span>*<span class="number">10</span>^<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line">输出格式</span><br><span class="line"></span><br><span class="line">输出一行，和大于m的方案数</span><br><span class="line"></span><br><span class="line">样例输入</span><br><span class="line"></span><br><span class="line">    <span class="number">5</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line">样例输出</span><br><span class="line"></span><br><span class="line">    <span class="number">6</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">暴力？会爆哎？写了暴力加了优化，怕TLE。归纳了一个多小时的规律，放弃，改回纯暴力吧.....<span class="number">.8</span>TLE2AC</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 11000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="built_in">set</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; pd;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">    	<span class="keyword">for</span> (<span class="keyword">int</span> j=n;j&gt;=<span class="number">1</span>;j--)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">if</span> (i+j&lt;=m)</span><br><span class="line">    			<span class="keyword">break</span>;</span><br><span class="line">    		<span class="keyword">if</span> (pd.count(make_pair(i,j))||pd.count(make_pair(j,i))||i==j)</span><br><span class="line">    			<span class="keyword">continue</span>;</span><br><span class="line">    		ans++;</span><br><span class="line">    		pd.insert(make_pair(i,j));</span><br><span class="line">			pd.insert(make_pair(j,i));</span><br><span class="line">    	&#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>嗯…</p>
+<p>看了下同学的代码，发现就是枚举好那几个优化。OneCode真是玄学，一段同样的代码和同一个点，可以跑出TLE和72ms?……</p>
+<hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n,j=<span class="number">1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">while</span> (i+j&lt;=m&amp;&amp;j&lt;i)<span class="comment">//优化一</span></span><br><span class="line">    		j++;</span><br><span class="line">    	<span class="keyword">if</span> (i-j&lt;<span class="number">0</span>)<span class="comment">//优化二</span></span><br><span class="line">    		<span class="keyword">break</span>;</span><br><span class="line">    	ans+=i-j;<span class="comment">//优化三</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>第四题</strong><br><em>字符串拼接</em></p>
+<p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10130" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10130</a></p>
+<hr>
+<p>时间限制: 1000 MS 内存限制: 131072 KB </p>
+<p><strong>问题描述</strong></p>
+<p>字符串的相关问题一直是一个比较难的问题。这不，一码小学的zbs同学就向吴迎老师问了这样一道题目。给你三个字符串a,b,c,问你c字符串能不能由a,b两个字符串拼接而成，其中a,b字符串中对应的字母顺序不能改变，例如字符串a:zbs,字符串b:wy,字符串c:zwybs,c是能由a,b合成的,如果c为wzsby，则不能有a,b合成。<br>输入格式<br>输入一行，3个字符串a,b,c，字符串由小写字母表示，且a,b的长度在[1,1000]区间,c的长度为a,b的长度和.</p>
+<p>输出格式</p>
+<p>如果c能由a,b合成输出Yes,否则输出No.</p>
+<p>样例输入</p>
+<pre><code>zbs wy zwybs
+</code></pre><p>样例输出</p>
+<pre><code>Yes
+</code></pre><hr>
+<p>没什么好说的，直接暴力DFS，AC。<br>该题数据水，正解DP</p>
+<hr>
+<pre><code class="cpp">
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">define</span> Max 11000</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="built_in">string</span> a,b,c;
+<span class="keyword">int</span> l;
+
+<span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">string</span> a,<span class="built_in">string</span> b,<span class="built_in">string</span> c)</span></span>
+<span class="function"></span>{
+    <span class="keyword">if</span> (a.size()==<span class="number">0</span>&amp;&amp;b.size()==<span class="number">0</span>&amp;&amp;c.size()==<span class="number">0</span>)<span class="comment">//如果全部的size都为零，说明可以拼成。直接输出。</span>
+    {
+        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Yes"</span>;
+        <span class="built_in">exit</span>(<span class="number">0</span>);
+    }
+    <span class="keyword">if</span> (a[<span class="number">0</span>]==c[<span class="number">0</span>]&amp;&amp;a.size()!=<span class="number">0</span>)<span class="comment">//如果当前a的首字母和c的首字母匹配，DFS下一个。</span>
+        dfs(a.substr(<span class="number">1</span>,a.size()),b,c.substr(<span class="number">1</span>,c.size()));
+    <span class="keyword">if</span> (b[<span class="number">0</span>]==c[<span class="number">0</span>]&amp;&amp;b.size()!=<span class="number">0</span>)<span class="comment">//如果当前b的首字母和c的首字母匹配，DFS下一个。</span>
+        dfs(a,b.substr(<span class="number">1</span>,b.size()),c.substr(<span class="number">1</span>,c.size()));        
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+    l=c.size();
+    dfs(a,b,c);
+    <span class="built_in">cout</span>&lt;&lt;<span class="string">"No"</span>;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://lqr513.coding.me/blog/blog/2018/07/25/Round3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -541,242 +777,6 @@ bcd
 </code></pre>
 <hr>
 <p>正解：DFS+状态压缩<br>我怎么会咧？？？(╯°Д°)╯</p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lqr513.coding.me/blog/blog/2018/07/25/Round2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jeb">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jeb's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/07/25/Round2/" itemprop="url">OneCode天梯赛 Round2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T10:50:23+00:00">2018-07-25</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="OneCode天梯赛-Round2"><a href="#OneCode天梯赛-Round2" class="headerlink" title="#OneCode天梯赛 Round2"></a>#OneCode天梯赛 Round2</h2><p><strong>第一题</strong><br><em>横冲直撞的车</em></p>
-<p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10127" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10127</a></p>
-<hr>
-<p>时间限制: 1000 MS 内存限制: 131072 KB</p>
-<p> <strong>问题描述</strong></p>
-<p>有一天无聊的迎哥哥不知道从哪弄来一副象棋，不过不知道下象棋的迎哥哥很是头疼，各种百度查规则ORZ…<br>这不，我们迎哥哥查阅到，中国象棋是中华民族传统文化的一部分，不仅在国内深受广大棋迷的喜爱，而且流传至国外，也逐步赢得很多棋迷的青睐。国外比较流行国际象棋（chess），很多外国棋友都想知晓中国象棋的游戏规则。两者走棋方法毕竟有很多差异，熟知一下基本规则，两种棋艺很多地方都是能够触类旁通的。很想精通中国象棋的他就开始一个一个的研究象棋中棋子的行棋规则。<br>迎哥哥第一个研究的就是象棋中的车，车在象棋中威力最大，无论横线、竖线均可行走，只要无子阻拦，步数不受限制。俗称“车行直路”。<br>那么问题就来了，现在迎哥哥的手上有一个n*m的棋盘，棋盘上已经有k个棋子存在。因为“车行直路”,所以迎哥哥想让他的车想横冲直撞。车能够横冲直撞的条件就是车所在的行或者列不存在别的棋子;已知的k个棋子的位置会干扰车的横冲直撞;所以现在想问你，已知的棋盘有多少个行和多少列列可以让我们迎哥哥的车横冲直撞？</p>
-<p>输入格式</p>
-<p>第一行输入n,m,k三个整数,棋盘的大小为n*m,k表示棋盘中已有棋子的个数;<br>接下来k行,每行两个整数x,y表示棋子的位置</p>
-<p>其中数据范围:(1&lt;=n,m&lt;=1000000),(0&lt;=k&lt;=1000000)(1&lt;=x&lt;=n,1&lt;=y&lt;=m)</p>
-<p>【友情提示】</p>
-<p>由于输入数据过大，scanf,printf很有必要哦！！！！</p>
-<p>输出格式</p>
-<p>输出一行2个整数，分别表示车可以横冲直撞的行数及列数</p>
-<p>样例输入</p>
-<pre><code>4 2 3
-4 1
-3 1
-4 2
-</code></pre><p>样例输出</p>
-<pre><code>2 0
-</code></pre><hr>
-<p>看到题第一反应是用DFS暴力，然后看了数据，放弃了。于是采用标记行和列是否被标记的办法。第一次提交，8WA2AC</p>
-<p>附错误的代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 5000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s.substr(<span class="number">0</span>,m)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		s=s.substr(m,s.size());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>提交之后很懵逼，查了很久发现n、m和k定义错类型了。。。</p>
-<hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 1000000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">bool</span> h[Max],l[Max];<span class="comment">//h是储存行的标记,l是储存列的标记</span></span><br><span class="line"><span class="keyword">int</span> ans1,ans2,n,m,k;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x,&amp;y);</span><br><span class="line">    	h[x]=<span class="number">1</span>;</span><br><span class="line">    	l[y]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    	<span class="keyword">if</span> (!h[i])</span><br><span class="line">    		ans1++;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    	<span class="keyword">if</span> (!l[i])</span><br><span class="line">    		ans2++;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans1&lt;&lt;<span class="string">' '</span>&lt;&lt;ans2;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>第二题</strong><br><em>精英人才</em></p>
-<p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10128" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10128</a></p>
-<hr>
-<p>时间限制: 1000 MS 内存限制: 131072 KB</p>
-<p><strong>问题描述</strong></p>
-<p>初到杭州的wlxsq,发现杭州搞竞赛的学生是真的多，竞赛的种类也很多。有奥数竞赛，物理竞赛，还有搞OI竞赛的，and so on…是真的很多<br>现在wlxsq拿到一份杭州竞赛的数据，总共有n个人参加竞赛,假设每人只能参加一种竞赛，每个人有相应的竞赛类型和他的精英价值，现在wlxsq想招一批精英人才，每一类竞赛最多招3人，问你在这个条件下，wlxsq可以招的精英人才的最大价值，当然，对于没有价值的选手(价值不大于0的选手)我们是肯定不会要的。<br>输入格式<br>输入一个整数n,表示参加竞赛的总人数，接下来n(1&lt;=n&lt;=10000)行每行输入一个字符串s(由大小写字母表示，长度不超过15)和一个整数v(-100&lt;=v&lt;=100),表示这个竞赛选手的竞赛类型和这次竞赛的精英价值。</p>
-<p>输出格式</p>
-<p>输出一行，wlxsq可获得的最大精英价值。</p>
-<p>样例输入</p>
-<pre><code>9
-OI 1
-OI 2
-OI 3
-OI 4
-OI 5
-OI 6
-math 10
-math 16
-english 100
-</code></pre><p>样例输出</p>
-<pre><code>141
-</code></pre><hr>
-<p>本来想用map暴力一下，发现貌似实现比较困难？于是用结构体保存学科与价值信息，再写个cmp函数sort一下，再模拟。提交5WA5AC？？？</p>
-<p>哇！GCC它歧视我！！！</p>
-<p>错误代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 11000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">int</span> n,k,len;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> k;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">&#125;a[Max];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node x,node y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x.s&lt;y.s?<span class="number">1</span>:x.s==y.s?x.k&gt;y.k:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;k;</span><br><span class="line">    	<span class="keyword">if</span> (k&lt;=<span class="number">0</span>)</span><br><span class="line">    		<span class="keyword">continue</span>;</span><br><span class="line">    	a[++len].s=s,a[len].k=k;</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a+<span class="number">1</span>,a+len+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span> (l==<span class="number">3</span>&amp;&amp;a[i].s==a[i<span class="number">-1</span>].s)</span><br><span class="line">    		<span class="keyword">continue</span>;</span><br><span class="line">    	<span class="keyword">if</span> (l==<span class="number">3</span>&amp;&amp;a[i].s!=a[i<span class="number">-1</span>].s)</span><br><span class="line">    		l=<span class="number">0</span>;</span><br><span class="line">    	ans+=a[i].k;</span><br><span class="line">    	l++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">**第三题**</span><br><span class="line">*统计和*</span><br><span class="line"></span><br><span class="line">原题链接：http:<span class="comment">//oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10129</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">时间限制: <span class="number">1000</span> MS 内存限制: <span class="number">131072</span> KB </span><br><span class="line"></span><br><span class="line">**问题描述**</span><br><span class="line"></span><br><span class="line">有这样一道有意思的题目，从<span class="number">1</span>到n的自然数中，每次取出不同的两个数，要使他们的和大于m,问你有多少中不同的方案数，取<span class="number">1</span> <span class="number">5</span> 和 <span class="number">5</span> <span class="number">1</span>是同一种方案。</span><br><span class="line"></span><br><span class="line">输入格式</span><br><span class="line"></span><br><span class="line">输入两个整数n,m(<span class="number">1</span>&lt;=n&lt;=<span class="number">10</span>^<span class="number">7</span>,<span class="number">1</span>&lt;=m&lt;=<span class="number">2</span>*<span class="number">10</span>^<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line">输出格式</span><br><span class="line"></span><br><span class="line">输出一行，和大于m的方案数</span><br><span class="line"></span><br><span class="line">样例输入</span><br><span class="line"></span><br><span class="line">    <span class="number">5</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line">样例输出</span><br><span class="line"></span><br><span class="line">    <span class="number">6</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">暴力？会爆哎？写了暴力加了优化，怕TLE。归纳了一个多小时的规律，放弃，改回纯暴力吧.....<span class="number">.8</span>TLE2AC</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 11000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="built_in">set</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; pd;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">    	<span class="keyword">for</span> (<span class="keyword">int</span> j=n;j&gt;=<span class="number">1</span>;j--)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">if</span> (i+j&lt;=m)</span><br><span class="line">    			<span class="keyword">break</span>;</span><br><span class="line">    		<span class="keyword">if</span> (pd.count(make_pair(i,j))||pd.count(make_pair(j,i))||i==j)</span><br><span class="line">    			<span class="keyword">continue</span>;</span><br><span class="line">    		ans++;</span><br><span class="line">    		pd.insert(make_pair(i,j));</span><br><span class="line">			pd.insert(make_pair(j,i));</span><br><span class="line">    	&#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>嗯…</p>
-<p>看了下同学的代码，发现就是枚举好那几个优化。OneCode真是玄学，一段同样的代码和同一个点，可以跑出TLE和72ms?……</p>
-<hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n,j=<span class="number">1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">while</span> (i+j&lt;=m&amp;&amp;j&lt;i)<span class="comment">//优化一</span></span><br><span class="line">    		j++;</span><br><span class="line">    	<span class="keyword">if</span> (i-j&lt;<span class="number">0</span>)<span class="comment">//优化二</span></span><br><span class="line">    		<span class="keyword">break</span>;</span><br><span class="line">    	ans+=i-j;<span class="comment">//优化三</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>第四题</strong><br><em>字符串拼接</em></p>
-<p>原题链接：<a href="http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10130" target="_blank" rel="noopener">http://oj.onecode.com.cn/index.php/Ladder/showProblemPage/id/10130</a></p>
-<hr>
-<p>时间限制: 1000 MS 内存限制: 131072 KB </p>
-<p><strong>问题描述</strong></p>
-<p>字符串的相关问题一直是一个比较难的问题。这不，一码小学的zbs同学就向吴迎老师问了这样一道题目。给你三个字符串a,b,c,问你c字符串能不能由a,b两个字符串拼接而成，其中a,b字符串中对应的字母顺序不能改变，例如字符串a:zbs,字符串b:wy,字符串c:zwybs,c是能由a,b合成的,如果c为wzsby，则不能有a,b合成。<br>输入格式<br>输入一行，3个字符串a,b,c，字符串由小写字母表示，且a,b的长度在[1,1000]区间,c的长度为a,b的长度和.</p>
-<p>输出格式</p>
-<p>如果c能由a,b合成输出Yes,否则输出No.</p>
-<p>样例输入</p>
-<pre><code>zbs wy zwybs
-</code></pre><p>样例输出</p>
-<pre><code>Yes
-</code></pre><hr>
-<p>没什么好说的，直接暴力DFS，AC。<br>该题数据水，正解DP</p>
-<hr>
-<pre><code class="cpp">
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">define</span> Max 11000</span>
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="built_in">string</span> a,b,c;
-<span class="keyword">int</span> l;
-
-<span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">string</span> a,<span class="built_in">string</span> b,<span class="built_in">string</span> c)</span></span>
-<span class="function"></span>{
-    <span class="keyword">if</span> (a.size()==<span class="number">0</span>&amp;&amp;b.size()==<span class="number">0</span>&amp;&amp;c.size()==<span class="number">0</span>)<span class="comment">//如果全部的size都为零，说明可以拼成。直接输出。</span>
-    {
-        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Yes"</span>;
-        <span class="built_in">exit</span>(<span class="number">0</span>);
-    }
-    <span class="keyword">if</span> (a[<span class="number">0</span>]==c[<span class="number">0</span>]&amp;&amp;a.size()!=<span class="number">0</span>)<span class="comment">//如果当前a的首字母和c的首字母匹配，DFS下一个。</span>
-        dfs(a.substr(<span class="number">1</span>,a.size()),b,c.substr(<span class="number">1</span>,c.size()));
-    <span class="keyword">if</span> (b[<span class="number">0</span>]==c[<span class="number">0</span>]&amp;&amp;b.size()!=<span class="number">0</span>)<span class="comment">//如果当前b的首字母和c的首字母匹配，DFS下一个。</span>
-        dfs(a,b.substr(<span class="number">1</span>,b.size()),c.substr(<span class="number">1</span>,c.size()));        
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
-<span class="function"></span>{
-    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-    l=c.size();
-    dfs(a,b,c);
-    <span class="built_in">cout</span>&lt;&lt;<span class="string">"No"</span>;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
 <hr>
 
           
