@@ -112,20 +112,22 @@
 
 
 
-  <meta name="description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明  template &amp;lt;class T, class Container = vector,  class Compare = less &amp;gt; class prior">
+  <meta name="description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明 12template &amp;lt;class T, class Container = vector&amp;lt;T&amp;gt;,          class Compare = les">
 <meta property="og:type" content="article">
 <meta property="og:title" content="堆">
 <meta property="og:url" content="https://www.jeb.website/details/2018/08-24-Heap.html">
 <meta property="og:site_name" content="Jeb&#39;s blog">
-<meta property="og:description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明  template &amp;lt;class T, class Container = vector,  class Compare = less &amp;gt; class prior">
+<meta property="og:description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明 12template &amp;lt;class T, class Container = vector&amp;lt;T&amp;gt;,          class Compare = les">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.jeb.website/images/duiliz.png">
-<meta property="og:updated_time" content="2018-08-24T08:27:44.327Z">
+<meta property="og:updated_time" content="2018-08-24T09:37:19.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆">
-<meta name="twitter:description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明  template &amp;lt;class T, class Container = vector,  class Compare = less &amp;gt; class prior">
+<meta name="twitter:description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明 12template &amp;lt;class T, class Container = vector&amp;lt;T&amp;gt;,          class Compare = les">
 <meta name="twitter:image" content="https://www.jeb.website/images/duiliz.png">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="Jeb's blog" type="application/atom+xml" />
@@ -334,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 08:27:44" itemprop="dateCreated datePublished" datetime="2018-08-24T08:27:44+00:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 09:37:19" itemprop="dateCreated datePublished" datetime="2018-08-24T09:37:19+00:00">2018-08-24</time>
             
 
             
@@ -375,9 +377,7 @@
 <p>首先要先包含库,priority_queue包含于queue中：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>先声明</p>
-<blockquote>
-<p>template &lt;class T, class Container = vector<t>,<br>  class Compare = less<typename container::value_type=""> &gt; class priority_queue;</typename></t></p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>, <span class="title">class</span> <span class="title">Container</span> = <span class="title">vector</span>&lt;T&gt;,</span></span><br><span class="line"><span class="class">          <span class="title">class</span> <span class="title">Compare</span> = <span class="title">less</span>&lt;typename Container::value_type&gt; &gt; <span class="title">class</span> <span class="title">priority_queue</span>;</span></span><br></pre></td></tr></table></figure>
 <p>什么？看不懂？这里有一个简单版的~~</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="keyword">typename</span><span class="comment">/*你要定义的类型名*/</span>,<span class="built_in">vector</span>&lt;<span class="keyword">typename</span>/*同上*/&gt; q;</span><br></pre></td></tr></table></figure>
 <p>默认是小根堆，如果想要大根堆怎么办?那就改成：</p>
