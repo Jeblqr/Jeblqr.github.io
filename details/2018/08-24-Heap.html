@@ -119,13 +119,15 @@
 <meta property="og:site_name" content="Jeb&#39;s blog">
 <meta property="og:description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明 12template &amp;lt;class T, class Container = vector&amp;lt;T&amp;gt;,          class Compare = les">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.jeb.website/Heap/duiliz.png">
-<meta property="og:updated_time" content="2018-08-24T10:19:09.083Z">
+<meta property="og:image" content="https://www.jeb.website/img/duiliz.png">
+<meta property="og:updated_time" content="2018-08-24T10:30:02.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆">
 <meta name="twitter:description" content="堆  好，今天来讲堆。 先讲一个十分偷懒的方法：STL中的容器：priority_queue（优先队列） 首先要先包含库,priority_queue包含于queue中： 1#include&amp;lt;queue&amp;gt; 先声明 12template &amp;lt;class T, class Container = vector&amp;lt;T&amp;gt;,          class Compare = les">
-<meta name="twitter:image" content="https://www.jeb.website/Heap/duiliz.png">
+<meta name="twitter:image" content="https://www.jeb.website/img/duiliz.png">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="Jeb's blog" type="application/atom+xml" />
@@ -334,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 10:19:09" itemprop="dateCreated datePublished" datetime="2018-08-24T10:19:09+00:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 10:30:02" itemprop="dateCreated datePublished" datetime="2018-08-24T10:30:02+00:00">2018-08-24</time>
             
 
             
@@ -385,7 +387,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">q.push(x)<span class="comment">//把x放入队中</span></span><br><span class="line">q.pop()<span class="comment">//把队头删除出</span></span><br><span class="line">x=q.top()<span class="comment">//取出队头的值（不会删掉）</span></span><br><span class="line">l=q.size()<span class="comment">//获得队列中元素数量</span></span><br></pre></td></tr></table></figure>
 <p>好，讲正事：堆咋搞？</p>
 <p>我们以小根堆为例，首先要知道的是，堆是一棵完全二叉树，像这样</p>
-<p><img src="/Heap/duiliz.png" alt="堆的例子"></p>
+<p><img src="/img/duiliz.png" alt="堆的例子"></p>
 <p>可以看出规律：</p>
 <blockquote>
 <p>A[i]&lt;=A[i<em>2], A[i]&lt;=A[i</em>2+1]</p>
@@ -450,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/details/2018/08-24-WanLuoLiurm.html" rel="next" title="网络流：入门篇">
-                <i class="fa fa-chevron-left"></i> 网络流：入门篇
+              <a href="/details/2018/08-24-DanYuanDianZuiDuanLuJIng.html" rel="next" title="单源点最短路径(上)">
+                <i class="fa fa-chevron-left"></i> 单源点最短路径(上)
               </a>
             
           </div>
@@ -459,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/details/2018/08-24-DanYuanDianZuiDuanLuJIng.html" rel="prev" title="单源点最短路径(上)">
-                单源点最短路径(上) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

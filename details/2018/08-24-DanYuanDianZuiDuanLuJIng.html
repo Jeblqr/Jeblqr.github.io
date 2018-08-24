@@ -119,15 +119,13 @@
 <meta property="og:site_name" content="Jeb&#39;s blog">
 <meta property="og:description" content="单源点最短路径(上)依然很可能没有下 科科。说到最短路径，那么首先，最短路径是什么呢？很明显，是一个点到另一个点可行路径的最小权值和（废话） 上一幅图  我们设s=1，t=8，求的就是s~t中可行路径的权值和（要注意，边是双向的） 当然，最简单的办法是直接建立邻接矩阵，然后循环每个可行路径，最后找到最短路径。这就是Floyd算法。因为每个边都要拓展一次，所以说其时间复杂度是很大的（O(n^3)）。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.jeb.website/DanYuanDianZuiDuanLuJIng/wxtlz.png">
-<meta property="og:updated_time" content="2018-08-24T10:19:27.632Z">
+<meta property="og:image" content="https://www.jeb.website/img/wxtlz.png">
+<meta property="og:updated_time" content="2018-08-24T10:29:54.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单源点最短路径(上)">
 <meta name="twitter:description" content="单源点最短路径(上)依然很可能没有下 科科。说到最短路径，那么首先，最短路径是什么呢？很明显，是一个点到另一个点可行路径的最小权值和（废话） 上一幅图  我们设s=1，t=8，求的就是s~t中可行路径的权值和（要注意，边是双向的） 当然，最简单的办法是直接建立邻接矩阵，然后循环每个可行路径，最后找到最短路径。这就是Floyd算法。因为每个边都要拓展一次，所以说其时间复杂度是很大的（O(n^3)）。">
-<meta name="twitter:image" content="https://www.jeb.website/DanYuanDianZuiDuanLuJIng/wxtlz.png">
+<meta name="twitter:image" content="https://www.jeb.website/img/wxtlz.png">
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="Jeb's blog" type="application/atom+xml" />
@@ -336,7 +334,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 10:19:27" itemprop="dateCreated datePublished" datetime="2018-08-24T10:19:27+00:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 10:29:54" itemprop="dateCreated datePublished" datetime="2018-08-24T10:29:54+00:00">2018-08-24</time>
             
 
             
@@ -373,7 +371,7 @@
         <h2 id="单源点最短路径-上"><a href="#单源点最短路径-上" class="headerlink" title="单源点最短路径(上)"></a>单源点最短路径(上)</h2><p><del>依然很可能没有下</del></p>
 <p>科科。<br>说到最短路径，那么首先，最短路径是什么呢？很明显，是一个点到另一个点可行路径的最小权值和（废话）</p>
 <p>上一幅图</p>
-<p><img src="/DanYuanDianZuiDuanLuJIng/wxtlz.png" alt="无向图的例子"></p>
+<p><img src="/img/wxtlz.png" alt="无向图的例子"></p>
 <p>我们设s=1，t=8，求的就是s~t中可行路径的权值和（要注意，边是双向的）</p>
 <p>当然，最简单的办法是直接建立邻接矩阵，然后循环每个可行路径，最后找到最短路径。这就是Floyd算法。因为每个边都要拓展一次，所以说其时间复杂度是很大的（O(n^3)）。</p>
 <p>所以说，我们这时应该换下思路。在Floyd中，我们使用“点”为标志存储，那我们可不可以使用“边”为标志存储呢？当然可以！邻接图！</p>
@@ -423,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/details/2018/08-24-Heap.html" rel="next" title="堆">
-                <i class="fa fa-chevron-left"></i> 堆
+              <a href="/details/2018/08-24-WanLuoLiurm.html" rel="next" title="网络流：入门篇">
+                <i class="fa fa-chevron-left"></i> 网络流：入门篇
               </a>
             
           </div>
@@ -432,6 +430,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/details/2018/08-24-Heap.html" rel="prev" title="堆">
+                堆 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
