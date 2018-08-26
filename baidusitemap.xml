@@ -4,8 +4,52 @@
 
     
   <url>
+    <loc>https://www.jeb.website/details/2018/08-26-DinicDQHYH.html</loc>
+    <lastmod>2018-08-26T08:59:08.303Z</lastmod>
+    <data>
+        <display>
+        <title>Dinic-当前弧优化</title>
+        <pubTime>2018-08-26T00:27:25.000Z</pubTime>
+        
+        <tag>图论</tag>
+         
+        <tag>Dinic</tag>
+         
+        <tag>优化</tag>
+         
+        <tag>网络流</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.jeb.website/details/2018/08-24-Heap.html</loc>
+    <lastmod>2018-08-26T08:29:16.612Z</lastmod>
+    <data>
+        <display>
+        <title>堆</title>
+        <pubTime>2018-08-24T18:56:10.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>堆</tag>
+         
+        <tag>优先队列</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.jeb.website/details/2018/08-04-WanLuoLiurm.html</loc>
-    <lastmod>2018-08-26T03:47:18.643Z</lastmod>
+    <lastmod>2018-08-26T03:48:49.549Z</lastmod>
     <data>
         <display>
         <title>网络流：入门篇</title>
@@ -46,23 +90,6 @@
 
     
   <url>
-    <loc>https://www.jeb.website/details/2018/08-24-Heap.html</loc>
-    <lastmod>2018-08-26T03:40:19.471Z</lastmod>
-    <data>
-        <display>
-        <title>堆</title>
-        <pubTime>2018-08-24T18:56:10.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.jeb.website/details/2018/08-25-WanLuoLiujj.html</loc>
     <lastmod>2018-08-26T03:39:25.001Z</lastmod>
     <data>
@@ -72,9 +99,9 @@
         
         <tag>图论</tag>
          
-        <tag>网络流</tag>
-         
         <tag>Dinic</tag>
+         
+        <tag>网络流</tag>
          
          
            
