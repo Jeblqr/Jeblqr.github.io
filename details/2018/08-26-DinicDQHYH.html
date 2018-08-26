@@ -120,9 +120,9 @@
 
 
   <meta name="description" content="之前的网络流（下）说过，Dinic有一个当前弧优化。那么今天就来说说“当前弧优化”。 怎么搞？当前弧优化也是很简单，只需要改两个地方。 当前因为是“当前”弧优化，所以我们先解决“当前”。 我们需要在统级函数中加上一个循环复制last到另一个数组里（我以head为例） 12345678910111213void NetworkFlows::dinic()&amp;#123;	mf=0;	int lf=0;">
-<meta name="keywords" content="图论,Dinic,优化,网络流">
+<meta name="keywords" content="图论,Dinic,优化,网络流,效率对比">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dinic-当前弧优化">
+<meta property="og:title" content="Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比">
 <meta property="og:url" content="https://www.jeb.website/details/2018/08-26-DinicDQHYH.html">
 <meta property="og:site_name" content="Jeb&#39;s blog">
 <meta property="og:description" content="之前的网络流（下）说过，Dinic有一个当前弧优化。那么今天就来说说“当前弧优化”。 怎么搞？当前弧优化也是很简单，只需要改两个地方。 当前因为是“当前”弧优化，所以我们先解决“当前”。 我们需要在统级函数中加上一个循环复制last到另一个数组里（我以head为例） 12345678910111213void NetworkFlows::dinic()&amp;#123;	mf=0;	int lf=0;">
@@ -130,9 +130,9 @@
 <meta property="og:image" content="https://www.jeb.website/img/wjyh.png">
 <meta property="og:image" content="https://www.jeb.website/img/jlyh.png">
 <meta property="og:image" content="https://www.jeb.website/img/ekwll.png">
-<meta property="og:updated_time" content="2018-08-26T08:59:08.303Z">
+<meta property="og:updated_time" content="2018-08-26T09:03:38.171Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dinic-当前弧优化">
+<meta name="twitter:title" content="Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比">
 <meta name="twitter:description" content="之前的网络流（下）说过，Dinic有一个当前弧优化。那么今天就来说说“当前弧优化”。 怎么搞？当前弧优化也是很简单，只需要改两个地方。 当前因为是“当前”弧优化，所以我们先解决“当前”。 我们需要在统级函数中加上一个循环复制last到另一个数组里（我以head为例） 12345678910111213void NetworkFlows::dinic()&amp;#123;	mf=0;	int lf=0;">
 <meta name="twitter:image" content="https://www.jeb.website/img/wjyh.png">
 
@@ -153,7 +153,7 @@
   };
 </script>
 
-  <title>Dinic-当前弧优化 | Jeb's blog</title>
+  <title>Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比 | Jeb's blog</title>
   
 
 
@@ -375,7 +375,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Dinic-当前弧优化
+          <h2 class="post-title" itemprop="name headline">Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比
               
             
           </h2>
@@ -414,7 +414,7 @@
 
           
           
-             <span id="/details/2018/08-26-DinicDQHYH.html" class="leancloud_visitors" data-flag-title="Dinic-当前弧优化">
+             <span id="/details/2018/08-26-DinicDQHYH.html" class="leancloud_visitors" data-flag-title="Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -528,6 +528,8 @@
             <a href="/tags/优化/" rel="tag"># 优化</a>
           
             <a href="/tags/网络流/" rel="tag"># 网络流</a>
+          
+            <a href="/tags/效率对比/" rel="tag"># 效率对比</a>
           
         </div>
       
@@ -658,7 +660,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -5,10 +5,10 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-26-DinicDQHYH.html</loc>
-    <lastmod>2018-08-26T08:59:08.303Z</lastmod>
+    <lastmod>2018-08-26T09:03:38.171Z</lastmod>
     <data>
         <display>
-        <title>Dinic-当前弧优化</title>
+        <title>Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比</title>
         <pubTime>2018-08-26T00:27:25.000Z</pubTime>
         
         <tag>图论</tag>
@@ -18,6 +18,8 @@
         <tag>优化</tag>
          
         <tag>网络流</tag>
+         
+        <tag>效率对比</tag>
          
          
            
