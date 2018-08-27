@@ -348,6 +348,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2018/08-27-Trie.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeb">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeb's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/details/2018/08-27-Trie.html" itemprop="url">
+                  Trie
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-27 13:16:41" itemprop="dateCreated datePublished" datetime="2018-08-27T13:16:41+08:00">2018-08-27</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/details/2018/08-27-Trie.html" class="leancloud_visitors" data-flag-title="Trie">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天我们来看下Trie字典树（念作tree/try）</p>
+<h2 id="什么是字典树"><a href="#什么是字典树" class="headerlink" title="什么是字典树"></a>什么是字典树</h2><p>先来看看什么是字典树</p>
+<blockquote>
+<p>在计算机科学中，trie，又称前缀树或字典树，是一种有序树，用于保存关联数组，其中的键通常是字符串。与二叉查找树不同，键不是直接保存在节点中，<br> 而是由节点在树中的位置决定。一个节点的所有子孙都有相同的前缀，也就是这个节点对应的字符串，而根节点对应空字符串。一般情况下，不是所有的节点<br> 都有对应的值，只有叶子节点和部分内部节点所对应的键才有相关的值。Trie这个术语来自于retrieval。根据词源学，trie的发明者Edward Fredkin把它<br> 读作/ˈtriː/ “tree”。但是，其他作者把它读作/ˈtraɪ/ “try”。在图示中，键标注在节点中，值标注在节点之下。每一个完整的英文单词对应一个特定的整数。<br> Trie可以看作是一个确定有限状态自动机，尽管边上的符号一般是隐含在分支的顺序中的。键不需要被显式地保存在节点中。图示中标注出完整的，只是为了演示trie<br> 的原理。trie中的键通常是字符串，但也可以是其它的结构。trie的算法可以很容易地修改为处理其它结构的有序序列，比如一串数字或者形状的排列。比如，<br> bitwise trie中的键是一串位元，可以用于表示整数或者内存地址。（摘自维基百科。<a href="https://zh.wikipedia.org/wiki/Trie" target="_blank" rel="noopener">传送门</a>）</p>
+</blockquote>
+<p>啰里八说一大堆，总结一下在OI中的用途：以空间换时间，达到优秀的（O(size(str))的时间复杂度来插入和查询字符串<del>其实查什么都是ok的</del></p>
+<h2 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>字典树是一棵树，采用单数组实现时，我们需要以下声明：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> tree[Max][<span class="number">27</span>], len, mark[Max];</span><br><span class="line">    <span class="comment">//tree诉诸用于储存跳转表，len为指向最后一个数组下标的指针，mark标记单词结束</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;<span class="comment">//初始化</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="built_in">string</span> s)</span></span>;<span class="comment">//插入一个字符串s</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="built_in">string</span> s)</span></span>;<span class="comment">//查询一个字符串s</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>那我们来一步步实现。</p>
+<h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><p>字典树一般用跳转表实现。我们用一个二维数组，第一维储存序号，第二维储存跳转到的序号</p>
+<p><img src="/img/triedt.png" alt="Triedt"></p>
+<p>看一下这张图应该理解了吧？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> Trie::add(<span class="built_in">string</span> s)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != s.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!tree[p][s[i] - <span class="string">'a'</span>])</span><br><span class="line">			tree[p][s[i] - <span class="string">'a'</span>] = ++len;</span><br><span class="line">		p = tree[p][s[i] - <span class="string">'a'</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	mark[p]++;<span class="comment">//统计出现次数&amp;记录结尾</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="query"><a href="#query" class="headerlink" title="query"></a>query</h3><p>相当于add操作的小改。</p>
+<p>我们想一下，在拓展字符串的过程中，怎么样导致当前路径没有当前字符串？很显然，有两个地方.</p>
+<p>第一个地方是在添加的过程中。如果跳转表无法跳到下一个跳转表，则没有当前字符串</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!tree[p][s[i] - <span class="string">'a'</span>])</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<p>第二是在标记单词尾的mark数组。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!mark[p])</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<p>综上，我们可以得出以下代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> Trie::query(<span class="built_in">string</span> s)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != s.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!tree[p][s[i] - <span class="string">'a'</span>])</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		p = tree[p][s[i] - <span class="string">'a'</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> mark[p];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 1000000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------------</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> tree[Max][<span class="number">27</span>], len, mark[Max];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="built_in">string</span> s)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="built_in">string</span> s)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Trie::init()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(tree, <span class="number">0</span>, <span class="keyword">sizeof</span> tree);</span><br><span class="line">	<span class="built_in">memset</span>(mark, <span class="number">0</span>, <span class="keyword">sizeof</span> mark);</span><br><span class="line">	len = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Trie::add(<span class="built_in">string</span> s)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != s.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!tree[p][s[i] - <span class="string">'a'</span>])</span><br><span class="line">			tree[p][s[i] - <span class="string">'a'</span>] = ++len;</span><br><span class="line">		p = tree[p][s[i] - <span class="string">'a'</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	mark[p]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Trie::query(<span class="built_in">string</span> s)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != s.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!tree[p][s[i] - <span class="string">'a'</span>])</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		p = tree[p][s[i] - <span class="string">'a'</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> mark[p];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//---------------------------------------</span></span><br><span class="line"></span><br><span class="line">Trie trie;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是不是很容易<del>背</del>呢？（滑稽）</p>
+<h2 id="参考资料-amp-模板题"><a href="#参考资料-amp-模板题" class="headerlink" title="参考资料&amp;模板题"></a>参考资料&amp;模板题</h2><p>参考资料：<a href="https://zh.wikipedia.org/wiki/Trie" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Trie</a></p>
+<p>模板题：<a href="https://www.luogu.org/problemnew/show/P2580" target="_blank" rel="noopener">这里</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2018/08-26-XianDuanShu.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1454,7 +1630,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1495,7 +1671,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1600,7 +1782,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.3k字</span>
+  <span class="post-count">博客全站共9.4k字</span>
 </div>
         
 
