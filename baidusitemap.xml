@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-27-Trie.html</loc>
-    <lastmod>2018-08-27T14:01:38.818Z</lastmod>
+    <lastmod>2018-08-27T14:01:38.000Z</lastmod>
     <data>
         <display>
         <title>Trie</title>
@@ -28,15 +28,15 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-26-XianDuanShu.html</loc>
-    <lastmod>2018-08-27T12:56:40.095Z</lastmod>
+    <lastmod>2018-08-27T12:56:40.000Z</lastmod>
     <data>
         <display>
         <title>线段树</title>
         <pubTime>2018-08-26T04:36:18.000Z</pubTime>
         
-        <tag>高级数据结构</tag>
-         
         <tag>线段树</tag>
+         
+        <tag>高级数据结构</tag>
          
          
            
@@ -47,7 +47,7 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-26-DinicDQHYH.html</loc>
-    <lastmod>2018-08-26T09:10:41.952Z</lastmod>
+    <lastmod>2018-08-26T09:10:41.000Z</lastmod>
     <data>
         <display>
         <title>Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比</title>
@@ -72,7 +72,7 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-25-Heap.html</loc>
-    <lastmod>2018-08-26T08:29:16.612Z</lastmod>
+    <lastmod>2018-08-26T08:29:16.000Z</lastmod>
     <data>
         <display>
         <title>堆</title>
@@ -93,7 +93,7 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-04-WanLuoLiurm.html</loc>
-    <lastmod>2018-08-26T03:48:49.549Z</lastmod>
+    <lastmod>2018-08-26T03:48:49.000Z</lastmod>
     <data>
         <display>
         <title>网络流：入门篇</title>
@@ -114,7 +114,7 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-22-DanYuanDianZuiDuanLuJIng.html</loc>
-    <lastmod>2018-08-26T03:45:54.113Z</lastmod>
+    <lastmod>2018-08-26T03:45:54.000Z</lastmod>
     <data>
         <display>
         <title>单源点最短路径(上)</title>
@@ -135,7 +135,7 @@
     
   <url>
     <loc>https://www.jeb.website/details/2018/08-25-WanLuoLiujj.html</loc>
-    <lastmod>2018-08-26T03:39:25.001Z</lastmod>
+    <lastmod>2018-08-26T03:39:25.000Z</lastmod>
     <data>
         <display>
         <title>网络流：进阶篇</title>
