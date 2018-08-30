@@ -119,13 +119,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jeb&#39;s BLOG">
-<meta property="og:url" content="https://www.jeb.website/tags/字符串/index.html">
+  <meta name="description" content="高产一波 我们来讲讲最小生成树。 什么是最小生成树先了解以下什么是“最小生成树”日常维基  最小生成树是一副连通加权无向图中一棵权值最小的生成树。在一给定的无向图 G = (V, E) 中，(u, v) 代表连接顶点 u 与顶点 v 的边，即 {\displaystyle (u,v)\in E}，而 w(u, v) 代表此边的权重，若存在 T 为 E 的子集，即 {\displaystyle T\">
+<meta name="keywords" content="图论,并查集,最小生成树,Kruskal,Prim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最小生成树">
+<meta property="og:url" content="https://www.jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html">
 <meta property="og:site_name" content="Jeb&#39;s BLOG">
+<meta property="og:description" content="高产一波 我们来讲讲最小生成树。 什么是最小生成树先了解以下什么是“最小生成树”日常维基  最小生成树是一副连通加权无向图中一棵权值最小的生成树。在一给定的无向图 G = (V, E) 中，(u, v) 代表连接顶点 u 与顶点 v 的边，即 {\displaystyle (u,v)\in E}，而 w(u, v) 代表此边的权重，若存在 T 为 E 的子集，即 {\displaystyle T\">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-30T15:19:55.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeb&#39;s BLOG">
+<meta name="twitter:title" content="最小生成树">
+<meta name="twitter:description" content="高产一波 我们来讲讲最小生成树。 什么是最小生成树先了解以下什么是“最小生成树”日常维基  最小生成树是一副连通加权无向图中一棵权值最小的生成树。在一给定的无向图 G = (V, E) 中，(u, v) 代表连接顶点 u 与顶点 v 的边，即 {\displaystyle (u,v)\in E}，而 w(u, v) 代表此边的权重，若存在 T 为 E 的子集，即 {\displaystyle T\">
 
 
 
@@ -134,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="https://www.jeb.website/tags/字符串/"/>
+  <link rel="canonical" href="https://www.jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html"/>
 
 
 
@@ -144,7 +149,7 @@
   };
 </script>
 
-  <title>标签: 字符串 | Jeb's BLOG</title>
+  <title>最小生成树 | Jeb's BLOG</title>
   
 
 
@@ -191,7 +196,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -283,25 +288,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -350,58 +336,248 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>字符串<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeb">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeb's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/details/2018/08-27-Trie.html" itemprop="url">
-              
-                <span itemprop="name">Trie</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">最小生成树
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-27T13:16:41+08:00"
-              content="2018-08-27" >
-          08-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-30 22:26:46" itemprop="dateCreated datePublished" datetime="2018-08-30T22:26:46+08:00">2018-08-30</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/details/2018/08-30-ZuiXiaoShengChengShu.html" class="leancloud_visitors" data-flag-title="最小生成树">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><del>高产一波</del></p>
+<p>我们来讲讲最小生成树。</p>
+<h2 id="什么是最小生成树"><a href="#什么是最小生成树" class="headerlink" title="什么是最小生成树"></a>什么是最小生成树</h2><p>先了解以下什么是“最小生成树”<del>日常维基</del></p>
+<blockquote>
+<p>最小生成树是一副连通加权无向图中一棵权值最小的生成树。<br>在一给定的无向图 G = (V, E) 中，(u, v) 代表连接顶点 u 与顶点 v 的边，即 <script type="math/tex">{\displaystyle (u,v)\in E}</script>，而 w(u, v) 代表此边的权重，若存在 T 为 E 的子集，即 <script type="math/tex">{\displaystyle T\subseteq E}</script>且 (V, T) 为树，使得</p>
+<script type="math/tex; mode=display">{\displaystyle w(T)=\sum _{(u,v)\in T}w(u,v)} w(T)=\sum _{(u,v)\in T}w(u,v)</script><p>的 w(T) 最小，则此 T 为 G 的最小生成树。<br>最小生成树其实是最小权重生成树的简称。<br>一个连通图可能有多个生成树。当图中的边具有权值时，总会有一个生成树的边的权值之和小于或者等于其它生成树的边的权值之和。广义上而言，对于非连通无向图来说，它的每一连通分量同样有最小生成树，它们的并被称为最小生成森林。<br>以有线电视电缆的架设为例，若只能沿着街道布线，则以街道为边，而路口为顶点，其中必然有一最小生成树能使布线成本最低。(来自<a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91" target="_blank" rel="noopener">这里</a>）</p>
+</blockquote>
+<p>看不懂对不对？<del>我也是</del></p>
+<p>但是，要是题目中有诸如“连接”啊之类的，就是它了。</p>
+<p>目前我们有两种常用的求解最小生成树的算法：Kruskal和Prim <del>毕竟其它的我都不会</del>。在稀疏图中，Kruskal占优；而在稠密图之中，Prim占优。</p>
+<h2 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h2><p>我们先来实现Kruskal</p>
+<p><del>抄维基</del></p>
+<blockquote>
+<p>Kruskal算法是一种用来查找最小生成树的算法，由Joseph Kruskal在1956年发表。用来解决同样问题的还有Prim算法和Boruvka算法等。三种算法都是贪心算法的应用。和Boruvka算法不同的地方是，Kruskal算法在图中存在相同权值的边时也有效。平均时间复杂度为 <script type="math/tex">{\displaystyle \mathrm {O} (|E|\log |V|)} {\displaystyle \mathrm {O} (|E|\log |V|)}</script>，其中 <script type="math/tex">{\displaystyle E}</script> 和 <script type="math/tex">{\displaystyle V}</script> 分别是图的边集和点集。(<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E9%B2%81%E6%96%AF%E5%85%8B%E5%B0%94%E6%BC%94%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">传送门</a>)</p>
+</blockquote>
+<hr>
+<p>未完待续</p>
+<hr>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Jeb 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jeb 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/图论/" rel="tag"># 图论</a>
+          
+            <a href="/tags/并查集/" rel="tag"># 并查集</a>
+          
+            <a href="/tags/最小生成树/" rel="tag"># 最小生成树</a>
+          
+            <a href="/tags/Kruskal/" rel="tag"># Kruskal</a>
+          
+            <a href="/tags/Prim/" rel="tag"># Prim</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/details/2018/08-30-DanYuanDianZuiDuanLuJingX.html" rel="next" title="单源点最短路径(下)">
+                <i class="fa fa-chevron-left"></i> 单源点最短路径(下)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODY4Ny8xNTIxNQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -422,8 +598,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,6 +748,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是最小生成树"><span class="nav-number">1.</span> <span class="nav-text">什么是最小生成树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kruskal"><span class="nav-number">2.</span> <span class="nav-text">Kruskal</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -728,6 +929,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
 
   
 
@@ -740,6 +945,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1082,43 +1298,42 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1138,9 +1353,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
@@ -1173,6 +1386,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
