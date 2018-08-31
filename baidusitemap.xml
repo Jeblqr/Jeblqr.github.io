@@ -4,27 +4,8 @@
 
     
   <url>
-    <loc>https://www.jeb.website/details/2018/08-31-UnionCheck.html</loc>
-    <lastmod>2018-08-31T10:20:43.850Z</lastmod>
-    <data>
-        <display>
-        <title>并查集</title>
-        <pubTime>2018-08-31T00:16:33.000Z</pubTime>
-        
-        <tag>高级数据结构</tag>
-         
-        <tag>并查集</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html</loc>
-    <lastmod>2018-08-30T15:19:55.175Z</lastmod>
+    <lastmod>2018-08-31T12:12:26.361Z</lastmod>
     <data>
         <display>
         <title>最小生成树</title>
@@ -39,6 +20,25 @@
         <tag>Kruskal</tag>
          
         <tag>Prim</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.jeb.website/details/2018/08-31-UnionCheck.html</loc>
+    <lastmod>2018-08-31T10:20:43.850Z</lastmod>
+    <data>
+        <display>
+        <title>并查集</title>
+        <pubTime>2018-08-31T00:16:33.000Z</pubTime>
+        
+        <tag>高级数据结构</tag>
+         
+        <tag>并查集</tag>
          
          
            
