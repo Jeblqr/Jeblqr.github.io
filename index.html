@@ -348,6 +348,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2018/08-31-UnionCheck.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeb">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeb's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/details/2018/08-31-UnionCheck.html" itemprop="url">
+                  并查集
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-31 08:16:33" itemprop="dateCreated datePublished" datetime="2018-08-31T08:16:33+08:00">2018-08-31</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/details/2018/08-31-UnionCheck.html" class="leancloud_visitors" data-flag-title="并查集">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>并查集是一种高级数据结构。</p>
+<p>先来看看维基怎么说：</p>
+<blockquote>
+<p>在计算机科学中，并查集是一种树型的数据结构，用于处理一些不交集（Disjoint Sets）的合并及查询问题。有一个联合-查找算法（union-find algorithm）定义了两个用于此数据结构的操作：<br>Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。<br>Union：将两个子集合并成同一个集合。<br>由于支持这两种操作，一个不相交集也常被称为联合-查找数据结构（union-find data structure）或合并-查找集合（merge-find set）。其他的重要方法，MakeSet，用于建立单元素集合。有了这些方法，许多经典的划分问题可以被解决。<br>为了更加精确的定义这些方法，需要定义如何表示集合。一种常用的策略是为每个集合选定一个固定的元素，称为代表，以表示整个集合。接着，Find(x) 返回 x 所属集合的代表，而 Union 使用两个集合的代表作为参数。<br>时间复杂度:<br>同时使用路径压缩、按秩（rank）合并优化的程序每个操作的平均时间仅为 <script type="math/tex">{\displaystyle O(\alpha (n))}</script>，其中 <script type="math/tex">{\displaystyle \alpha (n)}</script> 是 <script type="math/tex">{\displaystyle n=f(x)=A(x,x)}</script> 的反函数， <script type="math/tex">{\displaystyle A}</script> 是急速增加的阿克曼函数。因为 <script type="math/tex">{\displaystyle \alpha (n)}</script> 是其反函数，故 <script type="math/tex">{\displaystyle \alpha (n)}</script> 在 <script type="math/tex">{\displaystyle n}</script> 十分巨大时还是小于 5。因此，平均运行时间是一个极小的常数。实际上，这是渐近最优算法：Fredman 和 Saks 在 1989 年解释了 <script type="math/tex">{\displaystyle \Omega (\alpha (n))}</script> 的平均时间内可以获得任何并查集。<br>空间复杂度:</p>
+<p><script type="math/tex">{\displaystyle O(n)}</script>（n 为元素数量）<br>（<a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86" target="_blank" rel="noopener">传送门</a>）</p>
+</blockquote>
+<p><del>是不是贼高大上？</del></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h3><p>我们要先把fa数组初始化为下标（假设自己单独为一棵树）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        fa[i]=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h3><p>我们对于每对点执行Add操作，建立联系</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fx=GetRoot(x),fy=GetRoot(y);<span class="comment">//得到该树的Root</span></span><br><span class="line">	<span class="keyword">if</span> (fx!=fy)<span class="comment">//不同根说明没有在同一课树上</span></span><br><span class="line">		fa[fx]=fy;<span class="comment">//合并两棵树</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="GetRoot"><a href="#GetRoot" class="headerlink" title="GetRoot"></a>GetRoot</h3><p>对于每个点，我们需要一个GetRoot操作，向上查询得到它的祖宗。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetRoot</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[k]!=k)<span class="comment">//祖宗是自己的话，说明它是一棵树的root</span></span><br><span class="line">		fa[k]=find(fa[k]);<span class="comment">//路径合并，记录祖宗</span></span><br><span class="line">	<span class="keyword">return</span> fa[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Check"><a href="#Check" class="headerlink" title="Check"></a>Check</h3><p>查询两点是否在同一棵树上</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Check</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> GetRoot(x)==GetRoot(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就不贴完整的源码了<del>懒</del></p>
+<h2 id="参考-amp-模板题"><a href="#参考-amp-模板题" class="headerlink" title="参考&amp;模板题"></a>参考&amp;模板题</h2><p>参考：<br><a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86</a> （想学习更快的可以去看看）</p>
+<p>模板题：<a href="https://www.luogu.org/problemnew/show/P3367" target="_blank" rel="noopener">here</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1976,7 +2145,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2139,7 +2308,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.9k字</span>
+  <span class="post-count">博客全站共12.6k字</span>
 </div>
         
 
@@ -2713,6 +2882,8 @@
     
       
         
+      
+    
       
     
       
