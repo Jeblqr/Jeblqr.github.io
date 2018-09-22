@@ -5,9 +5,9 @@
   <subtitle>论一只蒟蒻的自我修养。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.jeb.website/"/>
+  <link href="https://jeb.website/"/>
   <updated>2018-08-31T10:20:43.850Z</updated>
-  <id>https://www.jeb.website/</id>
+  <id>https://jeb.website/</id>
   
   <author>
     <name>Jeb</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>并查集</title>
-    <link href="https://www.jeb.website/details/2018/08-31-UnionCheck.html"/>
-    <id>https://www.jeb.website/details/2018/08-31-UnionCheck.html</id>
+    <link href="https://jeb.website/details/2018/08-31-UnionCheck.html"/>
+    <id>https://jeb.website/details/2018/08-31-UnionCheck.html</id>
     <published>2018-08-31T00:16:33.000Z</published>
     <updated>2018-08-31T10:20:43.850Z</updated>
     
@@ -38,16 +38,16 @@
     </summary>
     
     
-      <category term="高级数据结构" scheme="https://www.jeb.website/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="高级数据结构" scheme="https://jeb.website/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="并查集" scheme="https://www.jeb.website/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <category term="并查集" scheme="https://jeb.website/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>最小生成树</title>
-    <link href="https://www.jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html"/>
-    <id>https://www.jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html</id>
+    <link href="https://jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html"/>
+    <id>https://jeb.website/details/2018/08-30-ZuiXiaoShengChengShu.html</id>
     <published>2018-08-30T14:26:46.000Z</published>
     <updated>2018-08-31T12:44:09.116Z</updated>
     
@@ -65,22 +65,22 @@
     </summary>
     
     
-      <category term="图论" scheme="https://www.jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="https://jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="并查集" scheme="https://www.jeb.website/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <category term="并查集" scheme="https://jeb.website/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
-      <category term="最小生成树" scheme="https://www.jeb.website/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+      <category term="最小生成树" scheme="https://jeb.website/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
     
-      <category term="Kruskal" scheme="https://www.jeb.website/tags/Kruskal/"/>
+      <category term="Kruskal" scheme="https://jeb.website/tags/Kruskal/"/>
     
-      <category term="Prim" scheme="https://www.jeb.website/tags/Prim/"/>
+      <category term="Prim" scheme="https://jeb.website/tags/Prim/"/>
     
   </entry>
   
   <entry>
     <title>单源点最短路径(下)</title>
-    <link href="https://www.jeb.website/details/2018/08-30-DanYuanDianZuiDuanLuJingX.html"/>
-    <id>https://www.jeb.website/details/2018/08-30-DanYuanDianZuiDuanLuJingX.html</id>
+    <link href="https://jeb.website/details/2018/08-30-DanYuanDianZuiDuanLuJingX.html"/>
+    <id>https://jeb.website/details/2018/08-30-DanYuanDianZuiDuanLuJingX.html</id>
     <published>2018-08-30T12:26:52.000Z</published>
     <updated>2018-08-30T13:08:26.469Z</updated>
     
@@ -96,18 +96,18 @@
     </summary>
     
     
-      <category term="图论" scheme="https://www.jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="https://jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="最短路径" scheme="https://www.jeb.website/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
+      <category term="最短路径" scheme="https://jeb.website/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
     
-      <category term="Dijkstra" scheme="https://www.jeb.website/tags/Dijkstra/"/>
+      <category term="Dijkstra" scheme="https://jeb.website/tags/Dijkstra/"/>
     
   </entry>
   
   <entry>
     <title>Trie</title>
-    <link href="https://www.jeb.website/details/2018/08-27-Trie.html"/>
-    <id>https://www.jeb.website/details/2018/08-27-Trie.html</id>
+    <link href="https://jeb.website/details/2018/08-27-Trie.html"/>
+    <id>https://jeb.website/details/2018/08-27-Trie.html</id>
     <published>2018-08-27T05:16:41.000Z</published>
     <updated>2018-08-27T14:01:38.000Z</updated>
     
@@ -125,20 +125,20 @@
     </summary>
     
     
-      <category term="高级数据结构" scheme="https://www.jeb.website/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="高级数据结构" scheme="https://jeb.website/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="Trie字典树" scheme="https://www.jeb.website/tags/Trie%E5%AD%97%E5%85%B8%E6%A0%91/"/>
+      <category term="Trie字典树" scheme="https://jeb.website/tags/Trie%E5%AD%97%E5%85%B8%E6%A0%91/"/>
     
-      <category term="字符串" scheme="https://www.jeb.website/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://jeb.website/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="查询" scheme="https://www.jeb.website/tags/%E6%9F%A5%E8%AF%A2/"/>
+      <category term="查询" scheme="https://jeb.website/tags/%E6%9F%A5%E8%AF%A2/"/>
     
   </entry>
   
   <entry>
     <title>线段树</title>
-    <link href="https://www.jeb.website/details/2018/08-26-XianDuanShu.html"/>
-    <id>https://www.jeb.website/details/2018/08-26-XianDuanShu.html</id>
+    <link href="https://jeb.website/details/2018/08-26-XianDuanShu.html"/>
+    <id>https://jeb.website/details/2018/08-26-XianDuanShu.html</id>
     <published>2018-08-26T04:36:18.000Z</published>
     <updated>2018-08-27T12:56:40.000Z</updated>
     
@@ -156,16 +156,16 @@
     </summary>
     
     
-      <category term="高级数据结构" scheme="https://www.jeb.website/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="高级数据结构" scheme="https://jeb.website/tags/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="线段树" scheme="https://www.jeb.website/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+      <category term="线段树" scheme="https://jeb.website/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
     
   </entry>
   
   <entry>
     <title>Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比</title>
-    <link href="https://www.jeb.website/details/2018/08-26-DinicDQHYH.html"/>
-    <id>https://www.jeb.website/details/2018/08-26-DinicDQHYH.html</id>
+    <link href="https://jeb.website/details/2018/08-26-DinicDQHYH.html"/>
+    <id>https://jeb.website/details/2018/08-26-DinicDQHYH.html</id>
     <published>2018-08-26T00:27:25.000Z</published>
     <updated>2018-08-26T09:10:41.000Z</updated>
     
@@ -182,22 +182,22 @@
     </summary>
     
     
-      <category term="图论" scheme="https://www.jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="https://jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="Dinic" scheme="https://www.jeb.website/tags/Dinic/"/>
+      <category term="Dinic" scheme="https://jeb.website/tags/Dinic/"/>
     
-      <category term="优化" scheme="https://www.jeb.website/tags/%E4%BC%98%E5%8C%96/"/>
+      <category term="优化" scheme="https://jeb.website/tags/%E4%BC%98%E5%8C%96/"/>
     
-      <category term="网络流" scheme="https://www.jeb.website/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+      <category term="网络流" scheme="https://jeb.website/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
     
-      <category term="效率对比" scheme="https://www.jeb.website/tags/%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/"/>
+      <category term="效率对比" scheme="https://jeb.website/tags/%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94/"/>
     
   </entry>
   
   <entry>
     <title>网络流：进阶篇</title>
-    <link href="https://www.jeb.website/details/2018/08-25-WanLuoLiujj.html"/>
-    <id>https://www.jeb.website/details/2018/08-25-WanLuoLiujj.html</id>
+    <link href="https://jeb.website/details/2018/08-25-WanLuoLiujj.html"/>
+    <id>https://jeb.website/details/2018/08-25-WanLuoLiujj.html</id>
     <published>2018-08-25T03:43:39.000Z</published>
     <updated>2018-08-26T03:39:25.000Z</updated>
     
@@ -215,18 +215,18 @@
     </summary>
     
     
-      <category term="图论" scheme="https://www.jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="https://jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="Dinic" scheme="https://www.jeb.website/tags/Dinic/"/>
+      <category term="Dinic" scheme="https://jeb.website/tags/Dinic/"/>
     
-      <category term="网络流" scheme="https://www.jeb.website/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+      <category term="网络流" scheme="https://jeb.website/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
     
   </entry>
   
   <entry>
     <title>堆</title>
-    <link href="https://www.jeb.website/details/2018/08-25-Heap.html"/>
-    <id>https://www.jeb.website/details/2018/08-25-Heap.html</id>
+    <link href="https://jeb.website/details/2018/08-25-Heap.html"/>
+    <id>https://jeb.website/details/2018/08-25-Heap.html</id>
     <published>2018-08-24T18:56:10.000Z</published>
     <updated>2018-08-26T08:29:16.000Z</updated>
     
@@ -243,18 +243,18 @@
     </summary>
     
     
-      <category term="数据结构" scheme="https://www.jeb.website/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://jeb.website/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="堆" scheme="https://www.jeb.website/tags/%E5%A0%86/"/>
+      <category term="堆" scheme="https://jeb.website/tags/%E5%A0%86/"/>
     
-      <category term="优先队列" scheme="https://www.jeb.website/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
+      <category term="优先队列" scheme="https://jeb.website/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>单源点最短路径(上)</title>
-    <link href="https://www.jeb.website/details/2018/08-22-DanYuanDianZuiDuanLuJIng.html"/>
-    <id>https://www.jeb.website/details/2018/08-22-DanYuanDianZuiDuanLuJIng.html</id>
+    <link href="https://jeb.website/details/2018/08-22-DanYuanDianZuiDuanLuJIng.html"/>
+    <id>https://jeb.website/details/2018/08-22-DanYuanDianZuiDuanLuJIng.html</id>
     <published>2018-08-22T14:54:07.000Z</published>
     <updated>2018-08-26T03:45:54.000Z</updated>
     
@@ -271,18 +271,18 @@
     </summary>
     
     
-      <category term="图论" scheme="https://www.jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="https://jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="最短路径" scheme="https://www.jeb.website/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
+      <category term="最短路径" scheme="https://jeb.website/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
     
-      <category term="SPFA" scheme="https://www.jeb.website/tags/SPFA/"/>
+      <category term="SPFA" scheme="https://jeb.website/tags/SPFA/"/>
     
   </entry>
   
   <entry>
     <title>网络流：入门篇</title>
-    <link href="https://www.jeb.website/details/2018/08-04-WanLuoLiurm.html"/>
-    <id>https://www.jeb.website/details/2018/08-04-WanLuoLiurm.html</id>
+    <link href="https://jeb.website/details/2018/08-04-WanLuoLiurm.html"/>
+    <id>https://jeb.website/details/2018/08-04-WanLuoLiurm.html</id>
     <published>2018-08-04T13:27:54.000Z</published>
     <updated>2018-08-26T03:48:49.000Z</updated>
     
@@ -299,11 +299,11 @@
     </summary>
     
     
-      <category term="图论" scheme="https://www.jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="https://jeb.website/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="网络流" scheme="https://www.jeb.website/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+      <category term="网络流" scheme="https://jeb.website/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
     
-      <category term="EK" scheme="https://www.jeb.website/tags/EK/"/>
+      <category term="EK" scheme="https://jeb.website/tags/EK/"/>
     
   </entry>
   
