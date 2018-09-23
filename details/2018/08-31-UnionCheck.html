@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Jeb&#39;s BLOG">
 <meta property="og:description" content="简介并查集是一种高级数据结构。 先来看看维基怎么说：  在计算机科学中，并查集是一种树型的数据结构，用于处理一些不交集（Disjoint Sets）的合并及查询问题。有一个联合-查找算法（union-find algorithm）定义了两个用于此数据结构的操作：Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。Union：将两个子集合并成同一个集合。由于支持这两种操作，一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-31T10:20:43.850Z">
+<meta property="og:updated_time" content="2018-09-23T13:19:43.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并查集">
 <meta name="twitter:description" content="简介并查集是一种高级数据结构。 先来看看维基怎么说：  在计算机科学中，并查集是一种树型的数据结构，用于处理一些不交集（Disjoint Sets）的合并及查询问题。有一个联合-查找算法（union-find algorithm）定义了两个用于此数据结构的操作：Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。Union：将两个子集合并成同一个集合。由于支持这两种操作，一">
@@ -457,7 +457,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetRoot</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[k]!=k)<span class="comment">//祖宗是自己的话，说明它是一棵树的root</span></span><br><span class="line">		fa[k]=find(fa[k]);<span class="comment">//路径合并，记录祖宗</span></span><br><span class="line">	<span class="keyword">return</span> fa[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Check"><a href="#Check" class="headerlink" title="Check"></a>Check</h3><p>查询两点是否在同一棵树上</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Check</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> GetRoot(x)==GetRoot(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>就不贴完整的源码了<del>懒</del></p>
+<p>就不贴完整的源码了 <del>懒</del></p>
 <h2 id="参考-amp-模板题"><a href="#参考-amp-模板题" class="headerlink" title="参考&amp;模板题"></a>参考&amp;模板题</h2><p>参考：<br><a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86</a> （想学习更快的可以去看看）</p>
 <p>模板题：<a href="https://www.luogu.org/problemnew/show/P3367" target="_blank" rel="noopener">here</a></p>
 
