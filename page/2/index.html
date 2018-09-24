@@ -119,21 +119,13 @@
 
 
 
-  <meta name="description" content="（也不知道会不会有进阶篇） Part1 最大流什么叫网络流   okok，我们先来讲一下什么叫网络流   这里有一幅图    每一个边都有一个流量，我们叫它V  把它想象成一个自来水厂和你家之间的供水线路，有一个原点s(自来水厂)和一个汇点t(你家)。问你家在一个单位时间内最大可以有多少水用。   很明显，水的多少取决于最小的边的流量。在这张图中，你家最多可以有7+4=13的水。   那么算法的关">
-<meta name="keywords" content="图论,网络流,EK">
-<meta property="og:type" content="article">
-<meta property="og:title" content="网络流：入门篇">
-<meta property="og:url" content="https://www.jeb.website/details/2018/08-04-WanLuoLiurm.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Jeb&#39;s BLOG">
+<meta property="og:url" content="https://www.jeb.website/page/2/index.html">
 <meta property="og:site_name" content="Jeb&#39;s BLOG">
-<meta property="og:description" content="（也不知道会不会有进阶篇） Part1 最大流什么叫网络流   okok，我们先来讲一下什么叫网络流   这里有一幅图    每一个边都有一个流量，我们叫它V  把它想象成一个自来水厂和你家之间的供水线路，有一个原点s(自来水厂)和一个汇点t(你家)。问你家在一个单位时间内最大可以有多少水用。   很明显，水的多少取决于最小的边的流量。在这张图中，你家最多可以有7+4=13的水。   那么算法的关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.jeb.website/img/wlz.png">
-<meta property="og:image" content="https://www.jeb.website/img/sbl.png">
-<meta property="og:updated_time" content="2018-08-26T03:48:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络流：入门篇">
-<meta name="twitter:description" content="（也不知道会不会有进阶篇） Part1 最大流什么叫网络流   okok，我们先来讲一下什么叫网络流   这里有一幅图    每一个边都有一个流量，我们叫它V  把它想象成一个自来水厂和你家之间的供水线路，有一个原点s(自来水厂)和一个汇点t(你家)。问你家在一个单位时间内最大可以有多少水用。   很明显，水的多少取决于最小的边的流量。在这张图中，你家最多可以有7+4=13的水。   那么算法的关">
-<meta name="twitter:image" content="https://www.jeb.website/img/wlz.png">
+<meta name="twitter:title" content="Jeb&#39;s BLOG">
 
 
 
@@ -142,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://www.jeb.website/details/2018/08-04-WanLuoLiurm.html"/>
+  <link rel="canonical" href="https://www.jeb.website/page/2/"/>
 
 
 
@@ -152,7 +144,7 @@
   };
 </script>
 
-  <title>网络流：入门篇 | Jeb's BLOG</title>
+  <title>Jeb's BLOG – 论一只蒟蒻的自我修养。</title>
   
 
 
@@ -199,7 +191,8 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -338,9 +331,9 @@
           
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -348,8 +341,6 @@
   
   
 
-  
-    <div class="reading-progress-bar"></div>
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -374,7 +365,11 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">网络流：入门篇
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/details/2018/08-04-WanLuoLiurm.html" itemprop="url">
+                  网络流：入门篇
+                </a>
               
             
           </h2>
@@ -445,7 +440,9 @@
       
 
       
-        <p>（<del>也不知道会不会有进阶篇</del>）</p>
+        
+          
+            <p>（<del>也不知道会不会有进阶篇</del>）</p>
 <h2 id="Part1-最大流"><a href="#Part1-最大流" class="headerlink" title="Part1 最大流"></a>Part1 最大流</h2><h3 id="什么叫网络流"><a href="#什么叫网络流" class="headerlink" title="什么叫网络流"></a>什么叫网络流</h3><p>   okok，我们先来讲一下什么叫网络流<br>   这里有一幅图</p>
 <p><img src="/img/wlz.png" alt="网络流的例子"></p>
 <p>  每一个边都有一个流量，我们叫它V<br>  把它想象成一个自来水厂和你家之间的供水线路，有一个原点s(自来水厂)和一个汇点t(你家)。问你家在一个单位时间内最大可以有多少水用。</p>
@@ -471,6 +468,8 @@
 <h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p>放出代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 1100000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkFlows</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">int</span> y,v,w,next;</span><br><span class="line">	&#125;node[Max];</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">prev</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">int</span> x,i;</span><br><span class="line">	&#125;pre[Max];</span><br><span class="line">	<span class="keyword">bool</span> pd[Max];</span><br><span class="line">	<span class="keyword">int</span> spfa[Max];</span><br><span class="line">	<span class="keyword">int</span> len,last[Max],s,t,n,m,mf,co;<span class="comment">//co是花费</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span>;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">EK</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::build(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span><br><span class="line">&#123;</span><br><span class="line">	len++;</span><br><span class="line">	node[len].y=y,node[len].v=v,node[len].w=w,node[len].next=last[x],last[x]=len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::init()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(node,<span class="number">0</span>,<span class="keyword">sizeof</span> node);</span><br><span class="line">	<span class="keyword">int</span> x,y,v,w;</span><br><span class="line">	len=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y&gt;&gt;v&gt;&gt;w,build(x,y,v,w),build(y,x,<span class="number">0</span>,-w);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> NetworkFlows::find()<span class="comment">//spfa求最短路</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(pd,<span class="number">0</span>,<span class="keyword">sizeof</span> pd);</span><br><span class="line">	<span class="built_in">memset</span>(pre,<span class="number">0</span>,<span class="keyword">sizeof</span> pre);</span><br><span class="line">	<span class="built_in">memset</span>(spfa,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> spfa);</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; que;</span><br><span class="line">	que.push(s);</span><br><span class="line">	pd[s]=<span class="number">1</span>;</span><br><span class="line">	spfa[s]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (!que.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x=que.front();</span><br><span class="line">		que.pop();</span><br><span class="line">		pd[x]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">			<span class="keyword">if</span> (spfa[y]&gt;spfa[x]+node[i].w&amp;&amp;node[i].v)</span><br><span class="line">			&#123;</span><br><span class="line">				spfa[y]=spfa[x]+node[i].w;</span><br><span class="line">				pre[y].i=i,pre[y].x=x;</span><br><span class="line">				<span class="keyword">if</span> (!pd[y])</span><br><span class="line">					pd[y]=<span class="number">1</span>,que.push(y);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> spfa[t]!=<span class="number">0x3f3f3f3f</span>;<span class="comment">//是否有s-&gt;t的路径</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::print()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;mf&lt;&lt;<span class="string">' '</span>&lt;&lt;co&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::EK()</span><br><span class="line">&#123;</span><br><span class="line">	mf=<span class="number">0</span>,co=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (find())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> minn=<span class="number">1</span>&lt;&lt;<span class="number">26</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=t;i!=s;i=pre[i].x)</span><br><span class="line">			minn=min(minn,node[pre[i].i].v);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=t;i!=s;i=pre[i].x)</span><br><span class="line">			node[pre[i].i].v-=minn,node[pre[i].i^<span class="number">1</span>].v+=minn;</span><br><span class="line">		mf+=minn;</span><br><span class="line">		co+=minn*spfa[t];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NetworkFlows f;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	f.init();</span><br><span class="line">	f.EK();</span><br><span class="line">	f.print();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+          
+        
       
     </div>
 
@@ -482,85 +481,24 @@
 
     <div>
       
-        <div>
-
-    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-
-</div>
-      
     </div>
 
     
 
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="Jeb 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jeb 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/图论/" rel="tag"># 图论</a>
-          
-            <a href="/tags/网络流/" rel="tag"># 网络流</a>
-          
-            <a href="/tags/EK/" rel="tag"># EK</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/details/2018/08-22-DanYuanDianZuiDuanLuJIng.html" rel="prev" title="单源点最短路径(上)">
-                单源点最短路径(上) <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -570,20 +508,18 @@
   </article>
 
 
-  </div>
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODY4Ny8xNTIxNQ=="></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -604,17 +540,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -756,22 +683,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part1-最大流"><span class="nav-number">1.</span> <span class="nav-text">Part1 最大流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么叫网络流"><span class="nav-number">1.1.</span> <span class="nav-text">什么叫网络流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EK"><span class="nav-number">1.2.</span> <span class="nav-text">EK</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-amp-实现"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义&amp;实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完整源码"><span class="nav-number">1.2.2.</span> <span class="nav-text">完整源码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.2.3.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part2-最小费用最大流"><span class="nav-number">2.</span> <span class="nav-text">Part2 最小费用最大流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是“最小费用”"><span class="nav-number">2.1.</span> <span class="nav-text">什么是“最小费用”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码"><span class="nav-number">2.2.</span> <span class="nav-text">源码</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -937,10 +848,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
-
-
 
   
 
@@ -953,17 +860,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
@@ -1306,42 +1202,43 @@
   
   <script>
     
-    function addCount(Counter) {
+    function showTime(Counter) {
+      var entries = [];
       var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
 
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
         .done(function ({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
-            
-            .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            })
-            
-            .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-            })
-          } else {
-            
-              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
-                .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(1);
-                })
-                .fail(function () {
-                  console.log('Failed to create');
-                });
-            
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
           }
         })
-      .fail(function ({ responseJSON }) {
-        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
-      });
+        .fail(function ({ responseJSON }) {
+          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+        });
     }
     
 
@@ -1361,7 +1258,9 @@
             });
           };
           
-          addCount(Counter);
+          if ($('.post-title-link').length >= 1) {
+            showTime(Counter);
+          }
           
         })
     });
@@ -1392,6 +1291,10 @@
   
 
   
+  
+    
+      
+    
   
 
   
