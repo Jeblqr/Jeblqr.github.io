@@ -442,7 +442,10 @@
       
         
           
-            <h6 id="用了就能AC？"><a href="#用了就能AC？" class="headerlink" title="用了就能AC？"></a><em>用了就能AC？</em></h6><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+            <font size="2"> <i> 用了就能AC？ </i> </font>
+
+
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
 <p>在计算机科学中，Aho–Corasick算法是由Alfred V. Aho和Margaret J.Corasick<br>发明的字符串搜索算法，<a href="https://zh.wikipedia.org/wiki/AC%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">1</a>用于在输入的一串字符串中匹配有限组“字典”中的子串。它与普通字符串匹配的不同点在于同时与所有字典串进行匹配。算法均摊情况下具有近似于线性的时间复杂度，约为字符串的长度加所有匹配的数量。然而由于需要找到所有匹配数，如果每个子串互相匹配（如字典为a，aa，aaa，aaaa，输入的字符串为aaaa），算法的时间复杂度会近似于匹配的二次函数。</p>
 <p>该算法主要依靠构造一个有限状态机（类似于在一个trie树中添加失配指针）来实现。这些额外的失配指针允许在查找字符串失败时进行回退（例如设Trie树的单词cat匹配失败，但是在Trie树中存在另一个单词cart，失配指针就会指向前缀ca），转向某前缀的其他分支，免于重复匹配前缀，提高算法效率。</p>
 <p>当一个字典串集合是已知的(例如一个计算机病毒库),<br>就可以以离线方式先将自动机求出并储存以供日后使用，在这种情况下，算法的时间复杂度为输入字符串长度和匹配数量之和。  From <a href="https://zh.wikipedia.org/wiki/AC%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">Here</a></p>
