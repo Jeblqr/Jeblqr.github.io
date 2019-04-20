@@ -348,6 +348,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2019/04-20-TreeDP.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeb">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeb's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/details/2019/04-20-TreeDP.html" itemprop="url">
+                  树形DP
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-20 14:19:24" itemprop="dateCreated datePublished" datetime="2019-04-20T14:19:24+08:00">2019-04-20</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/details/2019/04-20-TreeDP.html" class="leancloud_visitors" data-flag-title="树形DP">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><font color="#66ccff">树形DP</font>，顾名思义，就是在树上进行的DP。一般以$DFS$或拓扑排序作为载体，在$DFS$的时候进行$DP$。一般的模板长这样</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> T</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">	<span class="function">T <span class="title">max</span><span class="params">(T arg)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> arg;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> ...Args&gt; </span><br><span class="line">	<span class="function">T <span class="title">max</span><span class="params">(T arg,Args ...args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> max(arg,max(args...));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> y,next;</span><br><span class="line">&#125;node[<span class="number">100000001</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> last[<span class="number">10000001</span>],R[<span class="number">10000001</span>],tot,root,cnt;</span><br><span class="line"><span class="keyword">bool</span> bj[<span class="number">10000001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	node[++cnt]=&#123;y,last[x]&#125;;</span><br><span class="line">	last[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1000001</span>][<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y = node[i].y;</span><br><span class="line">		dfs(y);</span><br><span class="line">		<span class="comment">//状态转移方程</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="comment">//输入</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="comment">//找根</span></span><br><span class="line">	&#123;</span><br><span class="line">	    <span class="keyword">if</span> (!bj[i])</span><br><span class="line">	    &#123;</span><br><span class="line">	        root=i;</span><br><span class="line">	        <span class="keyword">break</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(root);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;();<span class="comment">//输出</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>给出两个方程</p>
+<ol>
+<li>最大覆盖类<script type="math/tex; mode=display">dp[x][0]=\sum_{y\in V} Min\{dp[y][0],dp[y][1]\}</script><script type="math/tex; mode=display">dp[x][0]=\sum_{y\in V} dp[y][0]</script></li>
+<li>背包问题类<script type="math/tex; mode=display">dp[x][i]=Min\{dp[x][i],dp[x][i-k]+dp[y][k]+w_{xy}\}</script></li>
+</ol>
+<p>上面的方程，$x$表示父亲节点，$y$表示儿子节点</p>
+<p>要特别注意的是，树形DP都是从上至下的，而且背包的$i$必须从大到小循环！！！（很重要，我已经被坑过好几次了）</p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><h2 id="P1352-没有上司的舞会"><a href="#P1352-没有上司的舞会" class="headerlink" title="[P1352] 没有上司的舞会"></a>[P1352] <a href="https://www.luogu.org/problemnew/show/P1352" target="_blank" rel="noopener">没有上司的舞会</a></h2><p>不难看出<del>很难看出</del>，这是第一种（最大覆盖类）的问题，套用上面的方程</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> T</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">	<span class="function">T <span class="title">max</span><span class="params">(T arg)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> arg;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> ...Args&gt; </span><br><span class="line">	<span class="function">T <span class="title">max</span><span class="params">(T arg,Args ...args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> max(arg,max(args...));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> y,next;</span><br><span class="line">&#125;node[<span class="number">100000001</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> last[<span class="number">10000001</span>],R[<span class="number">10000001</span>],tot,root,cnt;</span><br><span class="line"><span class="keyword">bool</span> bj[<span class="number">10000001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	node[++cnt]=&#123;y,last[x]&#125;;</span><br><span class="line">	last[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1000001</span>][<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dp[x][<span class="number">1</span>]+=R[x];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y = node[i].y;</span><br><span class="line">		dfs(y);</span><br><span class="line">		dp[x][<span class="number">1</span>]+=dp[y][<span class="number">0</span>];</span><br><span class="line">		dp[x][<span class="number">0</span>]+=max(dp[y][<span class="number">1</span>], dp[y][<span class="number">0</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;R[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>,l,k;i&lt;=n;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;l&gt;&gt;k,add(k,l),bj[l]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span> (bj[i]==<span class="number">0</span>)</span><br><span class="line">			&#123;root=i; <span class="keyword">break</span>;&#125;</span><br><span class="line">	dfs(root);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;max(dp[root][<span class="number">0</span>],dp[root][<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="P2015-二叉苹果树"><a href="#P2015-二叉苹果树" class="headerlink" title="[P2015] 二叉苹果树"></a>[P2015] <a href="https://www.luogu.org/problemnew/show/P2015" target="_blank" rel="noopener">二叉苹果树</a></h2><p>背包类，套用第二个方程</p>
+<p>不过这题有一些改变，要稍微改一下方程</p>
+<script type="math/tex; mode=display">dp[x][i]=Min\{dp[x][i],dp[x][i-k-1]+dp[y][k]+w_{xy}\}</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> T</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">    <span class="function">T <span class="title">max</span><span class="params">(T arg)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> arg;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> ...Args&gt; </span><br><span class="line">    <span class="function">T <span class="title">max</span><span class="params">(T arg,Args ...args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> max(arg,max(args...));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">    <span class="function">T <span class="title">min</span><span class="params">(T arg)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> arg;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> ...Args&gt; </span><br><span class="line">    <span class="function">T <span class="title">min</span><span class="params">(T arg,Args ...args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> min(arg,min(args...));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> y,next,c;</span><br><span class="line">&#125;node[<span class="number">100001</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> last[<span class="number">100001</span>],R[<span class="number">100001</span>],tot,root,cnt,size[<span class="number">10000001</span>];</span><br><span class="line"><span class="keyword">bool</span> bj[<span class="number">100001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    node[++cnt]=&#123;y,last[x],c&#125;;</span><br><span class="line">    last[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1001</span>][<span class="number">1001</span>],n,m;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> y = node[i].y;</span><br><span class="line">        <span class="keyword">if</span> (y==fa)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        dfs(y,x);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=q;j;j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k=j<span class="number">-1</span>;~k;k--)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[x][j]=max(dp[x][j],dp[x][j-k<span class="number">-1</span>]+dp[y][k]+node[i].c);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x,y,c;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y&gt;&gt;c;</span><br><span class="line">        add(x,y,c);</span><br><span class="line">        add(y,x,c);</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(<span class="number">1</span>,<span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;dp[<span class="number">1</span>][q];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="板子题"><a href="#板子题" class="headerlink" title="板子题"></a>板子题</h1><p><del>莫得</del></p>
+<p>[P1352] <a href="https://www.luogu.org/problemnew/show/P1352" target="_blank" rel="noopener">没有上司的舞会</a></p>
+<p>[P2015] <a href="https://www.luogu.org/problemnew/show/P2015" target="_blank" rel="noopener">二叉苹果树</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2019/04-12-Tarjan1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1933,186 +2101,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2018/08-25-WanLuoLiujj.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jeb">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jeb's BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/details/2018/08-25-WanLuoLiujj.html" itemprop="url">
-                  网络流：进阶篇
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-25 11:43:39" itemprop="dateCreated datePublished" datetime="2018-08-25T11:43:39+08:00">2018-08-25</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/details/2018/08-25-WanLuoLiujj.html" class="leancloud_visitors" data-flag-title="网络流：进阶篇">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><del>惊了，竟然还有下</del></p>
-<p>众说周知，EK算法的效率十分低下 (O(VE^2)),所以说，我们今天来讲讲另一种常用的而其更快的算法:Dinic</p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>首先说一下Dinic算法是什么</p>
-<blockquote>
-<p>Dinic算法（又称Dinitz算法）是一个在网络流中计算最大流的强多项式复杂度的算法，设想由以色列（前苏联）的计算机科学家Yefim (Chaim) A. Dinitz在1970年提出。<br> 算法O(V^2E)的时间复杂度类似于Edmonds–Karp算法，其时间复杂度为O(VE^2)，Dinic算法与Edmonds–Karp算法的不同之处在于它每轮算法都选择最短的可行路径进行增广。<br> Dinic算法中采用高度标号（level graph）以及阻塞流（blocking flow）实现。(摘自维基百科，<a href="https://zh.wikipedia.org/wiki/Dinic%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">传送门</a>)</p>
-</blockquote>
-<p>蛤？和EK的时间复杂度类似？那我学了有什么用？</p>
-<p>其实，O(V^2E)的时间复杂度是Dinic的理论时间复杂度上限，在实际中几乎永远都跑不满，几乎只能用O(能过)来称之。所以说Dinic还是十分优益的(何况还有当前弧优化)。</p>
-<p>先定义一下各种需要的东西</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkFlows</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">int</span> y,v,next;</span><br><span class="line">	&#125;node[Max];	<span class="comment">//储存邻接表</span></span><br><span class="line">	<span class="keyword">int</span> dist[Max];<span class="comment">//储存分层的信息</span></span><br><span class="line">	<span class="keyword">int</span> len,last[Max],s,t,n,m,mf;<span class="comment">//分别是：指向最后一个邻接表的指针，指向最后一个同x（发出点）的指针数组，原点，汇点，点的个数，边的个数，最大流</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> lf)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v)</span></span>;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">dinic</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">fdinic</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>先看看普通的网络流的图长什么样子。</p>
-<p><img src="/img/ptwll.png" alt="普通的网络流"></p>
-<p>Dinic算法基于“分层图”的思想，那么我们再看看分了一次层的网络流的图长什么样子。</p>
-<p><img src="/img/fcwll1.png" alt="分层的网络流"></p>
-<p>第一幅图是普通的网络流的图，而第二层是分了一次层的图。</p>
-<p>我们可以把它想象成立起来的楼，从第0层（源点，以下叫它s）到最后一层（汇点，以下叫它t），每相邻两个楼层有楼梯。而我们的任务是不断把这张分层并且寻找最短的路径。</p>
-<p>首先是如何分层的问题。</p>
-<p>我们需要不断从s点向外拓展并且标上序号，那么我们应该第一时间可以想到广搜。换一个角度理解，就是把边权都为一的图跑SPFA（当然跑其他的也是ok的）。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> NetworkFlows::fdinic()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dist,<span class="number">0x7f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; que;</span><br><span class="line">	dist[s]=<span class="number">0</span>;</span><br><span class="line">	que.push(s);</span><br><span class="line">	<span class="keyword">while</span> (que.size())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x=que.front();</span><br><span class="line">		que.pop();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">			<span class="keyword">if</span> (node[i].v&amp;&amp;dist[y]&gt;dist[x]+<span class="number">1</span>)<span class="comment">//node[i].v是判断该点是否还有流量可以走</span></span><br><span class="line">				dist[y]=dist[x]+<span class="number">1</span>,que.push(y);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dist[t]!=<span class="number">0x7f7f7f7f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="寻找"><a href="#寻找" class="headerlink" title="寻找"></a>寻找</h2><p>其次，我们要搞定如何寻找最短路。</p>
-<p>我们已经分好层了，所以我们只需要考虑一条路径上的流量是多少，找出来并减掉它。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> NetworkFlows::find(<span class="keyword">int</span> x,<span class="keyword">int</span> lf)<span class="comment">//x是当前寻找的点，lf是这条路径上的最小流</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (x==t)<span class="comment">//如果找到就返回最小流</span></span><br><span class="line">		<span class="keyword">return</span> lf;</span><br><span class="line">	<span class="keyword">int</span> rlf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)<span class="comment">//寻找其他共x的边</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">		<span class="keyword">if</span> (node[i].v&amp;&amp;dist[y]==dist[x]+<span class="number">1</span>)</span><br><span class="line">			<span class="keyword">if</span> (rlf=find(y,min(lf,node[i].v)))<span class="comment">//寻找下一个可以连接点，传min(lf,node[i].v)是为了让当前是最小的流</span></span><br><span class="line">			&#123;</span><br><span class="line">				node[i].v-=rlf,node[i^<span class="number">1</span>].v+=rlf;<span class="comment">//减掉这条路径的最小流</span></span><br><span class="line">				<span class="keyword">return</span> rlf;</span><br><span class="line">			&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><p>那么我们怎么统计出来呢？</p>
-<p>我们还需要两层while循环，一层循环fdinic()以不断寻找分层图，一层find(s,1&lt;<26>&gt;)不断去寻找当前分层图的最小流。</26></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> NetworkFlows::dinic()</span><br><span class="line">&#123;</span><br><span class="line">	mf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> lowf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (fdinic())</span><br><span class="line">		<span class="keyword">while</span> (lowf=find(s,<span class="number">1</span>&lt;&lt;<span class="number">26</span>))</span><br><span class="line">			mf+=lowf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>好了，剩下的包括初始化和输入之类的应该不用讲了。那我们直接放代码。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 1100000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkFlows</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">int</span> y,v,next;</span><br><span class="line">	&#125;node[Max];	</span><br><span class="line">	<span class="keyword">int</span> dist[Max];</span><br><span class="line">	<span class="keyword">int</span> len,last[Max],s,t,n,m,mf;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> lf)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">fdinic</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">dinic</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::build(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v)</span><br><span class="line">&#123;</span><br><span class="line">	len++;</span><br><span class="line">	node[len].y=y,node[len].v=v,node[len].next=last[x],last[x]=len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::init()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(node,<span class="number">0</span>,<span class="keyword">sizeof</span> node);</span><br><span class="line">	<span class="keyword">int</span> x,y,v;</span><br><span class="line">	len=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y&gt;&gt;v,build(x,y,v),build(y,x,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> NetworkFlows::fdinic()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dist,<span class="number">0x7f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; que;</span><br><span class="line">	dist[s]=<span class="number">0</span>;</span><br><span class="line">	que.push(s);</span><br><span class="line">	<span class="keyword">while</span> (que.size())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x=que.front();</span><br><span class="line">		que.pop();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">			<span class="keyword">if</span> (node[i].v&amp;&amp;dist[y]&gt;dist[x]+<span class="number">1</span>)</span><br><span class="line">				dist[y]=dist[x]+<span class="number">1</span>,que.push(y);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dist[t]!=<span class="number">0x7f7f7f7f</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> NetworkFlows::find(<span class="keyword">int</span> x,<span class="keyword">int</span> lf)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (x==t)</span><br><span class="line">		<span class="keyword">return</span> lf;</span><br><span class="line">	<span class="keyword">int</span> rlf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">		<span class="keyword">if</span> (node[i].v&amp;&amp;dist[y]==dist[x]+<span class="number">1</span>)</span><br><span class="line">			<span class="keyword">if</span> (rlf=find(y,min(lf,node[i].v)))</span><br><span class="line">			&#123;</span><br><span class="line">				node[i].v-=rlf,node[i^<span class="number">1</span>].v+=rlf;</span><br><span class="line">				<span class="keyword">return</span> rlf;</span><br><span class="line">			&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::print()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;mf&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::dinic()</span><br><span class="line">&#123;</span><br><span class="line">	mf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> lowf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (fdinic())</span><br><span class="line">		<span class="keyword">while</span> (lowf=find(s,<span class="number">1</span>&lt;&lt;<span class="number">26</span>))</span><br><span class="line">			mf+=lowf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NetworkFlows f;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	f.init();</span><br><span class="line">	f.dinic();</span><br><span class="line">	f.print();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="参考资料-amp-模板题"><a href="#参考资料-amp-模板题" class="headerlink" title="参考资料&amp;模板题"></a>参考资料&amp;模板题</h2><p><a href="https://zh.wikipedia.org/wiki/Dinic%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Dinic%E7%AE%97%E6%B3%95</a></p>
-<p>模板题点<a href="https://www.luogu.org/problemnew/show/P3376" target="_blank" rel="noopener">这里</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2165,7 +2153,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2228,7 +2216,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2331,7 +2323,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.5k字</span>
+  <span class="post-count">博客全站共19.4k字</span>
 </div>
         
 
@@ -2976,7 +2968,7 @@
     <script type="text/javascript"
       color="0,0,0" opacity='0.7' zIndex="-1" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   
-  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"lift","width":150,"height":300},"mobile":{"show":false}});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"lift","width":150,"height":300},"mobile":{"show":false}});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
