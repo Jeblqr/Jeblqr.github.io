@@ -119,22 +119,23 @@
 
 
 
-  <meta name="description" content="之前的网络流（下）说过，Dinic有一个当前弧优化。那么今天就来说说“当前弧优化”。 怎么搞？当前弧优化也是很简单，只需要改两个地方。 当前因为是“当前”弧优化，所以我们先解决“当前”。 我们需要在统级函数中加上一个循环复制last到另一个数组里（我以head为例） 12345678910111213void NetworkFlows::dinic()&amp;#123;	mf=0;	int lf=0;">
-<meta name="keywords" content="图论,Dinic,优化,网络流,效率对比">
+  <meta name="description" content="[SDOI2009]HH的项链题目描述 $HH$ 有一串由各种漂亮的贝壳组成的项链。$HH$ 相信不同的贝壳会带来好运，所以每次散步完后，他都会随意取出一段贝壳，思考它们所表达的含义。$HH$ 不断地收集新的贝壳，因此，他的项链变得越来越长。有一天，他突然提出了一个问题：某一段贝壳中，包含了多少种不同的贝壳？这个问题很难回答……因为项链实在是太长了。于是，他只好求助睿智的你，来解决这个问题。 输入">
+<meta name="keywords" content="暴力,算法,莫队">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比">
-<meta property="og:url" content="https://www.jeb.website/details/2018/08-26-DinicDQHYH.html">
+<meta property="og:title" content="莫队">
+<meta property="og:url" content="https://www.jeb.website/details/2019/08-01-MosAlorithm.html">
 <meta property="og:site_name" content="Jeb&#39;s BLOG">
-<meta property="og:description" content="之前的网络流（下）说过，Dinic有一个当前弧优化。那么今天就来说说“当前弧优化”。 怎么搞？当前弧优化也是很简单，只需要改两个地方。 当前因为是“当前”弧优化，所以我们先解决“当前”。 我们需要在统级函数中加上一个循环复制last到另一个数组里（我以head为例） 12345678910111213void NetworkFlows::dinic()&amp;#123;	mf=0;	int lf=0;">
+<meta property="og:description" content="[SDOI2009]HH的项链题目描述 $HH$ 有一串由各种漂亮的贝壳组成的项链。$HH$ 相信不同的贝壳会带来好运，所以每次散步完后，他都会随意取出一段贝壳，思考它们所表达的含义。$HH$ 不断地收集新的贝壳，因此，他的项链变得越来越长。有一天，他突然提出了一个问题：某一段贝壳中，包含了多少种不同的贝壳？这个问题很难回答……因为项链实在是太长了。于是，他只好求助睿智的你，来解决这个问题。 输入">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.jeb.website/img/wjyh.png">
-<meta property="og:image" content="https://www.jeb.website/img/jlyh.png">
-<meta property="og:image" content="https://www.jeb.website/img/ekwll.png">
-<meta property="og:updated_time" content="2018-08-26T09:10:41.000Z">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/66940.png">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/66960.png">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/66964.png">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/66965.png">
+<meta property="og:updated_time" content="2019-08-01T02:28:35.227Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比">
-<meta name="twitter:description" content="之前的网络流（下）说过，Dinic有一个当前弧优化。那么今天就来说说“当前弧优化”。 怎么搞？当前弧优化也是很简单，只需要改两个地方。 当前因为是“当前”弧优化，所以我们先解决“当前”。 我们需要在统级函数中加上一个循环复制last到另一个数组里（我以head为例） 12345678910111213void NetworkFlows::dinic()&amp;#123;	mf=0;	int lf=0;">
-<meta name="twitter:image" content="https://www.jeb.website/img/wjyh.png">
+<meta name="twitter:title" content="莫队">
+<meta name="twitter:description" content="[SDOI2009]HH的项链题目描述 $HH$ 有一串由各种漂亮的贝壳组成的项链。$HH$ 相信不同的贝壳会带来好运，所以每次散步完后，他都会随意取出一段贝壳，思考它们所表达的含义。$HH$ 不断地收集新的贝壳，因此，他的项链变得越来越长。有一天，他突然提出了一个问题：某一段贝壳中，包含了多少种不同的贝壳？这个问题很难回答……因为项链实在是太长了。于是，他只好求助睿智的你，来解决这个问题。 输入">
+<meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/66940.png">
 
 
 
@@ -143,7 +144,7 @@
 
 
 
-  <link rel="canonical" href="https://www.jeb.website/details/2018/08-26-DinicDQHYH.html"/>
+  <link rel="canonical" href="https://www.jeb.website/details/2019/08-01-MosAlorithm.html"/>
 
 
 
@@ -153,7 +154,7 @@
   };
 </script>
 
-  <title>Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比 | Jeb's BLOG</title>
+  <title>莫队 | Jeb's BLOG</title>
   
 
 
@@ -358,7 +359,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2018/08-26-DinicDQHYH.html">
+    <link itemprop="mainEntityOfPage" href="https://www.jeb.website/details/2019/08-01-MosAlorithm.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jeb">
@@ -375,7 +376,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比
+          <h2 class="post-title" itemprop="name headline">莫队
               
             
           </h2>
@@ -400,7 +401,7 @@
                 
               
 
-              <time title="创建时间：2018-08-26 08:27:25" itemprop="dateCreated datePublished" datetime="2018-08-26T08:27:25+08:00">2018-08-26</time>
+              <time title="创建时间：2019-08-01 10:28:35" itemprop="dateCreated datePublished" datetime="2019-08-01T10:28:35+08:00">2019-08-01</time>
             
 
             
@@ -414,7 +415,7 @@
 
           
           
-             <span id="/details/2018/08-26-DinicDQHYH.html" class="leancloud_visitors" data-flag-title="Dinic-当前弧优化 + 网络流算法时间复杂度纵向对比">
+             <span id="/details/2019/08-01-MosAlorithm.html" class="leancloud_visitors" data-flag-title="莫队">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -446,28 +447,43 @@
       
 
       
-        <p>之前的网络流（下）说过，Dinic有一个当前弧优化。那么今天就来说说“当前弧优化”。</p>
-<h2 id="怎么搞？"><a href="#怎么搞？" class="headerlink" title="怎么搞？"></a>怎么搞？</h2><p>当前弧优化也是很简单，只需要改两个地方。</p>
-<h3 id="当前"><a href="#当前" class="headerlink" title="当前"></a>当前</h3><p>因为是“当前”弧优化，所以我们先解决“当前”。</p>
-<p>我们需要在统级函数中加上一个循环复制last到另一个数组里（我以head为例）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> NetworkFlows::dinic()</span><br><span class="line">&#123;</span><br><span class="line">	mf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> lf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (fdinic())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			head[i]=last[i];<span class="comment">//当前弧优化</span></span><br><span class="line">		<span class="keyword">while</span> (lf=find(s,<span class="number">1</span>&lt;&lt;<span class="number">26</span>))</span><br><span class="line">			mf+=lf;</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="弧优化"><a href="#弧优化" class="headerlink" title="弧优化"></a>弧优化</h3><p>“当前”搞完了，再搞搞剩下的“弧优化”。</p>
-<p>我们这个优化需要在深搜中搞。下面看代码注释。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> NetworkFlows::find(<span class="keyword">int</span> x,<span class="keyword">int</span> lf)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (x==t)</span><br><span class="line">		<span class="keyword">return</span> lf;</span><br><span class="line">	<span class="keyword">int</span> rlf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> &amp;i=head[x];i;i=node[i].next)<span class="comment">//注意&amp;i，这样我们才能改变head。</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">		<span class="keyword">if</span> (node[i].v&amp;&amp;dist[y]==dist[x]+<span class="number">1</span>)</span><br><span class="line">			<span class="keyword">if</span> (rlf=find(y,min(lf,node[i].v)))</span><br><span class="line">			&#123;</span><br><span class="line">				node[i].v-=rlf;</span><br><span class="line">				node[i^<span class="number">1</span>].v+=rlf;</span><br><span class="line">				<span class="keyword">return</span> rlf;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们加了之后，我们就能记录优化（具体的只可意会不可言传，要靠理解（笑哭））。</p>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>好了，就讲这么多，下面是源代码。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max 1100000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkFlows</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">int</span> y,v,next;</span><br><span class="line">	&#125;node[Max];	</span><br><span class="line">	<span class="keyword">int</span> dist[Max];</span><br><span class="line">	<span class="keyword">int</span> len,last[Max],s,t,n,m,mf,head[Max];</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> lf)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v)</span></span>;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">dinic</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">fdinic</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::build(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v)</span><br><span class="line">&#123;</span><br><span class="line">	len++;</span><br><span class="line">	node[len].y=y,node[len].v=v,node[len].next=last[x],last[x]=len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::init()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(node,<span class="number">0</span>,<span class="keyword">sizeof</span> node);</span><br><span class="line">	<span class="keyword">int</span> x,y,v;</span><br><span class="line">	len=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y&gt;&gt;v,build(x,y,v),build(y,x,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> NetworkFlows::fdinic()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dist,<span class="number">0x7f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; que;</span><br><span class="line">	que.push(s);</span><br><span class="line">	dist[s]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (que.size())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x=que.front();</span><br><span class="line">		que.pop();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=last[x];i;i=node[i].next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">			<span class="keyword">if</span> (node[i].v&amp;&amp;dist[y]&gt;dist[x]+<span class="number">1</span>)</span><br><span class="line">				dist[y]=dist[x]+<span class="number">1</span>,que.push(y);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dist[t]!=<span class="number">0x7f7f7f7f</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> NetworkFlows::find(<span class="keyword">int</span> x,<span class="keyword">int</span> lf)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (x==t)</span><br><span class="line">		<span class="keyword">return</span> lf;</span><br><span class="line">	<span class="keyword">int</span> rlf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> &amp;i=head[x];i;i=node[i].next)<span class="comment">//注意&amp;i，以便改变head[x]进行优化，等同于head[k]=i</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y=node[i].y;</span><br><span class="line">		<span class="keyword">if</span> (node[i].v&amp;&amp;dist[y]==dist[x]+<span class="number">1</span>)</span><br><span class="line">			<span class="keyword">if</span> (rlf=find(y,min(lf,node[i].v)))</span><br><span class="line">			&#123;</span><br><span class="line">				node[i].v-=rlf;</span><br><span class="line">				node[i^<span class="number">1</span>].v+=rlf;</span><br><span class="line">				<span class="keyword">return</span> rlf;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::print()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;mf&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> NetworkFlows::dinic()</span><br><span class="line">&#123;</span><br><span class="line">	mf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> lf=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (fdinic())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">/*for (int i=1;i&lt;=n;i++)</span></span><br><span class="line"><span class="comment">			head[i]=last[i];//当前弧优化*/</span></span><br><span class="line">		<span class="built_in">memcpy</span>(head+<span class="number">1</span>,last+<span class="number">1</span>,n*<span class="number">4</span>);</span><br><span class="line">		<span class="keyword">while</span> (lf=find(s,<span class="number">1</span>&lt;&lt;<span class="number">26</span>))</span><br><span class="line">			mf+=lf;</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NetworkFlows f;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	f.init();</span><br><span class="line">	f.dinic();</span><br><span class="line">	f.print();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="效率？"><a href="#效率？" class="headerlink" title="效率？"></a>效率？</h2><p>这里有两张洛谷模板题的截图，第一张没加优化，第二张加了。</p>
-<p><img src="/img/wjyh.png" alt="未加当前弧优化"></p>
-<p><img src="/img/jlyh.png" alt="加了当前弧优化"></p>
-<p>再来一张EK的。</p>
-<p><img src="/img/ekwll.png" alt="EK"></p>
-<font size="2"> 为什么我写的代码时间复杂度这么~~突出~~神奇？</font>
-
-
-
-
-
+        <h2 id="SDOI2009-HH的项链"><a href="#SDOI2009-HH的项链" class="headerlink" title="[SDOI2009]HH的项链"></a><strong>[SDOI2009]HH的项链</strong></h2><p><strong>题目描述</strong></p>
+<p>$HH$ 有一串由各种漂亮的贝壳组成的项链。$HH$ 相信不同的贝壳会带来好运，所以每次散步完后，他都会随意取出一段贝壳，思考它们所表达的含义。$HH$ 不断地收集新的贝壳，因此，他的项链变得越来越长。有一天，他突然提出了一个问题：某一段贝壳中，包含了多少种不同的贝壳？这个问题很难回答……因为项链实在是太长了。于是，他只好求助睿智的你，来解决这个问题。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行：一个整数$N$，表示项链的长度。</p>
+<p>第二行：$N$ 个整数，表示依次表示项链中贝壳的编号（编号为$0$ 到$1000000$ 之间的整数）。</p>
+<p>第三行：一个整数$M$，表示$HH$ 询问的个数。</p>
+<p>接下来$M$ 行：每行两个整数，$L$ 和$R$（$1 ≤ L ≤ R ≤ N$），表示询问的区间。</p>
+<p><strong>输出格式</strong></p>
+<p>$M$ 行，每行一个整数，依次表示询问对应的答案。</p>
+<p>一句话题意：给定一个长度为$N$的数列（颜色）和$M$个$[l,r]$的区间询问，求$[l,r]$中不同的数的个数的数。</p>
+<h2 id="朴素"><a href="#朴素" class="headerlink" title="朴素"></a>朴素</h2><p>我们先来考虑比较朴素的算法：</p>
+<p>假设这是我们的数列：<br><img src="https://cdn.luogu.org/upload/pic/66940.png" alt=""></p>
+<p>（画得很渣，求轻喷）</p>
+<p>假如我们有一个询问是$[1,2]$,那我们先暴力解决，把数列存到$a[]$里，再开一个数组（桶）$color[]$，记录每个数字出现的次数。开一个$ans$,记录答案。当处理$[1,2]$时，先把$a[1]=1$扔$color[]$里，此时因为多了一个出现次数不为$0$的数字，所以$ans+=1$。同理，再把$a[2]=3$扔$color[]$里，此时因为多了一个出现次数不为$0$的数字，所以$ans+=1$。此时$ans=2$，便为这次询问的答案。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/66960.png" alt=""></p>
+<p>（要是被辣到眼睛的话，求轻敲！）</p>
+<p>再加入又进来了一个询问$[1,3]$，因为我们已经处理完了$[1,2]$，我们只要在此基础上，多处理$a[3]$就好了。</p>
+<p>把$a[3]=2$扔$color[]$里，此时因为多了一个出现次数不为$0$的数字，所以$ans+=1$。此时$ans=3$，便为这次询问的答案。</p>
+<p>（人的本质是复读机。）</p>
+<p><img src="https://cdn.luogu.org/upload/pic/66964.png" alt=""></p>
+<p>再下一个询问，$[2,4]$，怎么处理呢？我们只要从$color[]$中把$a[1] = 1$删掉。因为多了一个出现次数为$0$的数，所以把$ans -= 1$。然后再处理$a[4] = 3$，把它扔$color[]$里……嗯…没有多数为$1$的数诶，那就不理$ans$了！O(∩_∩)O</p>
+<p><img src="https://cdn.luogu.org/upload/pic/66965.png" alt=""></p>
+<p>不难看出，这个暴力的复杂度是$O(nm)$的。</p>
+<p>我知道这个暴力很无聊，但是请耐心看完（神犇请忽略（应该也没有神犇来看我这种美味蒟蒻的题解吧qwq））</p>
+<h2 id="说了这么多，这和我莫队有什么关系-）？"><a href="#说了这么多，这和我莫队有什么关系-）？" class="headerlink" title="说了这么多，这和我莫队有什么关系:）？"></a>说了这么多，这和我莫队有什么关系:）？</h2><p><strong>其实，这便是莫队的基础！</strong></p>
+<p>莫队，英文$Mo’s\space Algorithm$，发明者<a href="https://www.zhihu.com/people/mythly/activities" target="_blank" rel="noopener">莫涛</a>(%%%提交前先去膜一下防止$tle$)。，是一种<strong>强行离线</strong>的算法。</p>
+<p>对于这道题而言，便是先把询问离线保存再排个序，再用上面的暴力来直接干。复杂度<del>O(玄学)</del>$O(n\sqrt n)$。</p>
+<p>那我们怎么排序呢？</p>
+<p>我们要尽量减少修改$color[]$的次数，所以，这是一般的排序（其中，$block$变量是在$a[]$上分块的大小，一般取$\sqrt n$，$k.l$是询问的左边界($L$)，而$k.r$是询问的右边界($R$)）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Node a, Node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ((a.l / block) == (b.l / block))? a.l &lt; b.l : a.r &lt; b.r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种lese的，普通的排序，怎么配得上我们这种骚年呢？？</p>
+<p>隆重推荐：<strong>奇偶排序</strong>!看似玄学，但是能<strong>大大地</strong>减少时间复杂度！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span> <span class="params">(<span class="keyword">const</span> Question&amp; a, <span class="keyword">const</span> Question&amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a.l / block) ^ (b.l / block)? a.l &lt; b.l : (a.l / block) &amp; <span class="number">1</span>? a.r &lt; b.r: a.r &gt; b.r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的意思是：<strong>当$a.l$和$a.r$在同一个块内时，比较$a.l$和$b.l$的先后，否则如果$a.l$所在的块的编号为奇数时，比较$a.r &lt; b.r$，否则比较 $a.r&gt;b.r$</strong></p>
+<p>好了，讲完了，其他的请看代码理解吧！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(3, <span class="meta-string">"Ofast"</span>, <span class="meta-string">"inline"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Question</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l, r, id;</span><br><span class="line">	</span><br><span class="line">&#125; q[<span class="number">10000001</span>];</span><br><span class="line"><span class="keyword">int</span> block = <span class="number">0</span>, ans = <span class="number">0</span>, cnt[<span class="number">10000001</span>],</span><br><span class="line">    n, m, a[<span class="number">10000001</span>], Ans[<span class="number">10000001</span>];</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span> <span class="params">(<span class="keyword">const</span> Question&amp; a, <span class="keyword">const</span> Question&amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a.l / block) ^ (b.l / block)? (a.l / block) &lt; (b.l / block) : (a.l / block) &amp; <span class="number">1</span>? a.r &lt; b.r: a.r &gt; b.r;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!cnt[a[pos]])</span><br><span class="line">		ans++;</span><br><span class="line">	cnt[a[pos]]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cnt[a[pos]]--;</span><br><span class="line">	<span class="keyword">if</span> (!cnt[a[pos]])</span><br><span class="line">		ans--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> x;</span><br><span class="line">    <span class="keyword">while</span>((x = getchar()) &gt; <span class="string">'9'</span> || x &lt; <span class="string">'0'</span>) ;</span><br><span class="line">    <span class="keyword">int</span> u = x - <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">while</span>((x = getchar()) &lt;= <span class="string">'9'</span> &amp;&amp; x &gt;= <span class="string">'0'</span>) u = (u &lt;&lt; <span class="number">3</span>) + (u &lt;&lt; <span class="number">1</span>) + x - <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">return</span> u;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> buf[<span class="number">105</span>];  </span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">0</span>) p++;  </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">while</span>(i) &#123;  </span><br><span class="line">        buf[p++] = i % <span class="number">10</span>;  </span><br><span class="line">        i /= <span class="number">10</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = p<span class="number">-1</span>; j &gt;= <span class="number">0</span>; j--) <span class="built_in">putchar</span>(<span class="string">'0'</span> + buf[j]);  </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, m;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)<span class="comment">//读入数列</span></span><br><span class="line">		a[i] = read();</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">	block = n / <span class="built_in">sqrt</span>(m * <span class="number">2</span> / <span class="number">3</span>);<span class="comment">//在此题中，这样开比较快</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">		q[i].l = read(), q[i].r = read(), q[i].id = i;</span><br><span class="line">   <span class="comment">//读入</span></span><br><span class="line">   <span class="comment">//因为是离线的，而要顺序输出，所以要记录顺序</span></span><br><span class="line">	sort(q + <span class="number">1</span>, q + m + <span class="number">1</span>, cmp);<span class="comment">//根据上面的那个cmp排序</span></span><br><span class="line">	<span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)<span class="comment">//套用暴力</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> ql = q[i].l, qr = q[i].r;</span><br><span class="line">		<span class="keyword">while</span> (l &lt; ql)</span><br><span class="line">			del(l++);</span><br><span class="line">		<span class="keyword">while</span> (l &gt; ql)</span><br><span class="line">			add(--l);</span><br><span class="line">		<span class="keyword">while</span> (r &lt; qr)</span><br><span class="line">			add(++r);</span><br><span class="line">		<span class="keyword">while</span> (r &gt; qr)</span><br><span class="line">			del(r--);</span><br><span class="line">		Ans[q[i].id] = ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">		write(Ans[i]), <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>完结，撒fafa！！</strong>｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡+ﾟ</p>
 
       
     </div>
@@ -527,15 +543,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/图论/" rel="tag"># 图论</a>
+            <a href="/tags/暴力/" rel="tag"># 暴力</a>
           
-            <a href="/tags/Dinic/" rel="tag"># Dinic</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
-            <a href="/tags/优化/" rel="tag"># 优化</a>
-          
-            <a href="/tags/网络流/" rel="tag"># 网络流</a>
-          
-            <a href="/tags/效率对比/" rel="tag"># 效率对比</a>
+            <a href="/tags/莫队/" rel="tag"># 莫队</a>
           
         </div>
       
@@ -548,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/details/2018/08-25-WanLuoLiujj.html" rel="next" title="网络流：进阶篇">
-                <i class="fa fa-chevron-left"></i> 网络流：进阶篇
+              <a href="/details/2019/08-01-Old_Diver_Tree.html" rel="next" title="珂朵莉树">
+                <i class="fa fa-chevron-left"></i> 珂朵莉树
               </a>
             
           </div>
@@ -557,10 +569,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/details/2018/08-26-XianDuanShu.html" rel="prev" title="线段树">
-                线段树 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -790,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么搞？"><span class="nav-number">1.</span> <span class="nav-text">怎么搞？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当前"><span class="nav-number">1.1.</span> <span class="nav-text">当前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弧优化"><span class="nav-number">1.2.</span> <span class="nav-text">弧优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">2.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效率？"><span class="nav-number">3.</span> <span class="nav-text">效率？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SDOI2009-HH的项链"><span class="nav-number">1.</span> <span class="nav-text">[SDOI2009]HH的项链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素"><span class="nav-number">2.</span> <span class="nav-text">朴素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说了这么多，这和我莫队有什么关系-）？"><span class="nav-number">3.</span> <span class="nav-text">说了这么多，这和我莫队有什么关系:）？</span></a></li></ol></div>
             
 
           </div>
@@ -1418,6 +1426,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
